@@ -31,7 +31,7 @@
     <div class="valign-wrapper">
       <div class="row">
         <div class="col l6 s12">
-          <table>
+          <table id="consonantsTable">
             <tr>
               <td rowspan="2">Place, Manner</td>
               <td colspan="6">Labial</td>
@@ -50,7 +50,7 @@
               <td colspan="2">Palatal</td>
               <td colspan="2">Velar</td>
               <td colspan="2">Uvular</td>
-              <td colspan="2">Pharyngeal/epiglottal</td>
+              <td colspan="2">Pharyngeal/<br />epiglottal</td>
               <td colspan="2">Glottal</td>
             </tr>
             <tr>
@@ -61,8 +61,16 @@
               <td><a id="cons3" class="tooltipped" data-position="top" data-tooltip="voiced labiodental nasal" onclick="add('ɱ')">ɱ</a></td>
               <td></td>
               <td><a id="cons4" class="tooltipped" data-position="top" data-tooltip="voiced linguolabial nasal" onclick="add('n̼')">n̼</a></td>
-              <td colspan="3"><a id="cons5" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar nasal" onclick="add('n̥')">n̥</a></td>
-              <td colspan="3"><a id="cons6" class="tooltipped" data-position="top" data-tooltip="voiced alveolar nasal" onclick="add('n')">n</a></td>
+              <td>&nbsp;
+              </td>
+              <td>&nbsp;
+              </td>
+              <td><a id="cons5" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar nasal" onclick="add('n̥')">n̥</a></td>
+              <td><a id="cons6" class="tooltipped" data-position="top" data-tooltip="voiced alveolar nasal" onclick="add('n')">n</a></td>
+              <td>&nbsp;
+              </td>
+              <td>&nbsp;
+              </td>
               <td><a id="cons7" class="tooltipped" data-position="top" data-tooltip="voiceless retroflex nasal" onclick="add('ɳ̊')">ɳ̊</a></td>
               <td><a id="cons8" class="tooltipped" data-position="top" data-tooltip="voiced retroflex nasal" onclick="add('ɳ')">ɳ</a></td>
               <td><a id="cons9" class="tooltipped" data-position="top" data-tooltip="voiceless palatal nasal" onclick="add('ɲ̊')">ɲ̊</a></td>
@@ -84,21 +92,21 @@
               <td><a id="cons19" class="tooltipped" data-position="top" data-tooltip="voiced linguolabial plosive" onclick="add('d̼')">d̼</a></td>
               <td></td>
               <td></td>
+              <td><a id="cons20" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar plosive" onclick="add('t')">t</a></td>
+              <td><a id="cons21" class="tooltipped" data-position="top" data-tooltip="voiced alveolar plosive" onclick="add('d')">d</a></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td><a id="cons22" class="tooltipped" data-position="top" data-tooltip="voiceless retroflex plosive" onclick="add('ʈ')">ʈ</a></td>
+              <td><a id="cons23" class="tooltipped" data-position="top" data-tooltip="voiced retroflex plosive" onclick="add('ɖ')">ɖ</a></td>
+              <td><a id="cons24" class="tooltipped" data-position="top" data-tooltip="voiceless palatal plosive" onclick="add('c')">c</a></td>
+              <td><a id="cons25" class="tooltipped" data-position="top" data-tooltip="voiced palatal plosive" onclick="add('ɟ')">ɟ</a></td>
+              <td><a id="cons26" class="tooltipped" data-position="top" data-tooltip="voiceless velar plosive" onclick="add('k')">k</a></td>
+              <td><a id="cons27" class="tooltipped" data-position="top" data-tooltip="voiced velar plosive" onclick="add('g')">g</a></td>
+              <td><a id="cons28" class="tooltipped" data-position="top" data-tooltip="voiceless uvular plosive" onclick="add('q')">q</a></td>
+              <td><a id="cons29" class="tooltipped" data-position="top" data-tooltip="voiced uvular plosive" onclick="add('ɢ')">ɢ</a></td>
+              <td><a id="cons30" class="tooltipped" data-position="top" data-tooltip="voiceless pharyngeal/epiglottal plosive" onclick="add('ʡ')">ʡ</a></td>
               <td class="grey"></td>
-              <td></td>
+              <td><a id="cons31" class="tooltipped" data-position="top" data-tooltip="voiceless glottal plosive" onclick="add('ʔ')">ʔ</a></td>
               <td class="grey"></td>
             </tr>
             <tr>
@@ -106,172 +114,182 @@
               <td colspan="6" class="grey"></td>
               <td></td>
               <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="grey"></td>
-              <td></td>
-              <td class="grey"></td>
+              <td><a id="cons32" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar fricative" onclick="add('s')">s</a></td>
+              <td><a id="cons33" class="tooltipped" data-position="top" data-tooltip="voiced alveolar fricative" onclick="add('z')">z</a></td>
+              <td><a id="cons34" class="tooltipped" data-position="top" data-tooltip="voiceless postalveolar fricative" onclick="add('ʃ')">ʃ</a></td>
+              <td><a id="cons35" class="tooltipped" data-position="top" data-tooltip="voiced postalveolar fricative" onclick="add('ʒ')">ʒ</a></td>
+              <td><a id="cons36" class="tooltipped" data-position="top" data-tooltip="voiceless retroflex fricative" onclick="add('ʂ')">ʂ</a></td>
+              <td><a id="cons37" class="tooltipped" data-position="top" data-tooltip="voiced retroflex fricative" onclick="add('ʐ')">ʐ</a></td>
+              <td><a id="cons38" class="tooltipped" data-position="top" data-tooltip="voiceless palatal fricative" onclick="add('ɕ')">ɕ</a></td>
+              <td><a id="cons39" class="tooltipped" data-position="top" data-tooltip="voiced palatal fricative" onclick="add('ʑ')">ʑ</a></td>
+              <td colspan="8" class="grey"></td>
             </tr>
             <tr>
               <td>Non-sibilant Fricative</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="grey"></td>
-              <td></td>
-              <td class="grey"></td>
+              <td><a id="cons40" class="tooltipped" data-position="top" data-tooltip="voiceless bilabial fricative" onclick="add('ɸ')">ɸ</a></td>
+              <td><a id="cons41" class="tooltipped" data-position="top" data-tooltip="voiced bilabial fricative" onclick="add('β')">β</a></td>
+              <td><a id="cons42" class="tooltipped" data-position="top" data-tooltip="voiceless labiodental fricative" onclick="add('f')">f</a></td>
+              <td><a id="cons43" class="tooltipped" data-position="top" data-tooltip="voiced labiodental fricative" onclick="add('v')">v</a></td>
+              <td><a id="cons44" class="tooltipped" data-position="top" data-tooltip="voiceless linguolabial fricative" onclick="add('θ̼')">θ̼</a></td>
+              <td><a id="cons45" class="tooltipped" data-position="top" data-tooltip="voiced linguolabial fricative" onclick="add('ð̼')">ð̼</a></td>
+              <td><a id="cons46" class="tooltipped" data-position="top" data-tooltip="voiceless dental fricative" onclick="add('θ')">θ</a></td>
+              <td><a id="cons47" class="tooltipped" data-position="top" data-tooltip="voiced dental fricative" onclick="add('ð')">ð</a></td>
+              <td><a id="cons48" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar fricative" onclick="add('θ̠')">θ̠</a></td>
+              <td><a id="cons49" class="tooltipped" data-position="top" data-tooltip="voiced alveolar fricative" onclick="add('ð̠')">ð̠</a></td>
+              <td><a id="cons50" class="tooltipped" data-position="top" data-tooltip="voiceless postalveolar fricative" onclick="add('ɹ̠̊˔')">ɹ̠̊˔</a></td>
+              <td><a id="cons51" class="tooltipped" data-position="top" data-tooltip="voiced postalveolar fricative" onclick="add('ɹ̠˔')">ɹ̠˔</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons52" class="tooltipped" data-position="top" data-tooltip="voiced retroflex fricative" onclick="add('ɻ˔')">ɻ˔</a></td>
+              <td><a id="cons53" class="tooltipped" data-position="top" data-tooltip="voiceless palatal fricative" onclick="add('ç')">ç</a></td>
+              <td><a id="cons54" class="tooltipped" data-position="top" data-tooltip="voiced palatal fricative" onclick="add('ʝ')">ʝ</a></td>
+              <td><a id="cons55" class="tooltipped" data-position="top" data-tooltip="voiceless velar fricative" onclick="add('x')">x</a></td>
+              <td><a id="cons56" class="tooltipped" data-position="top" data-tooltip="voiced velar fricative" onclick="add('ɣ')">ɣ</a></td>
+              <td><a id="cons57" class="tooltipped" data-position="top" data-tooltip="voiceless uvular fricative" onclick="add('χ')">χ</a></td>
+              <td><a id="cons58" class="tooltipped" data-position="top" data-tooltip="voiced uvular fricative" onclick="add('ʁ')">ʁ</a></td>
+              <td><a id="cons59" class="tooltipped" data-position="top" data-tooltip="voiceless pharyngeal/epiglottal fricative" onclick="add('ħ')">ħ</a></td>
+              <td><a id="cons60" class="tooltipped" data-position="top" data-tooltip="voiced pharyngeal/epiglottal fricative" onclick="add('ʕ')">ʕ</a></td>
+              <td><a id="cons61" class="tooltipped" data-position="top" data-tooltip="voiceless glottal fricative" onclick="add('h')">h</a></td>
+              <td><a id="cons62" class="tooltipped" data-position="top" data-tooltip="voiced glottal fricative" onclick="add('ɦ')">ɦ</a></td>
             </tr>
             <tr>
               <td>Approximant</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="grey"></td>
-              <td></td>
-              <td class="grey"></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons63" class="tooltipped" data-position="top" data-tooltip="voiced bilabial approximant" onclick="add('ʋ')">ʋ</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons64" class="tooltipped" data-position="top" data-tooltip="voiced alveolar approximant" onclick="add('ɹ')">ɹ</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons65" class="tooltipped" data-position="top" data-tooltip="voiced retroflex approximant" onclick="add('ɻ')">ɻ</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons66" class="tooltipped" data-position="top" data-tooltip="voiced palatal approximant" onclick="add('j')">j</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons67" class="tooltipped" data-position="top" data-tooltip="voiced velar approximant" onclick="add('ɰ')">ɰ</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons68" class="tooltipped" data-position="top" data-tooltip="voiced glottal approximant" onclick="add('ʔ̞')">ʔ̞</a></td>
             </tr>
             <tr>
               <td>Tap/Flap</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="grey"></td>
-              <td></td>
-              <td class="grey"></td>
+              <td>&nbsp;</td>
+              <td><a id="cons69" class="tooltipped" data-position="top" data-tooltip="voiced bilabial flap" onclick="add('ⱱ̟')">ⱱ̟</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons70" class="tooltipped" data-position="top" data-tooltip="voiced labiodental flap" onclick="add('ⱱ')">ⱱ</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons71" class="tooltipped" data-position="top" data-tooltip="voiced linguolabial plosive" onclick="add('ɾ̼')">ɾ̼</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons72" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar tap/flap" onclick="add('ɾ̥')">ɾ̥</a></td>              
+              <td><a id="cons73" class="tooltipped" data-position="top" data-tooltip="voiced alveolar tap/flap" onclick="add('ɾ')">ɾ</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons74" class="tooltipped" data-position="top" data-tooltip="voiceless retroflex tap/flap" onclick="add('ɽ̊')">ɽ̊</a></td>              
+              <td><a id="cons75" class="tooltipped" data-position="top" data-tooltip="voiced retroflex tap/flap" onclick="add('ɽ')">ɽ</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td colspan="2" class="grey">&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons76" class="tooltipped" data-position="top" data-tooltip="voiced uvular tap/flap" onclick="add('ɢ̆')">ɢ̆</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons77" class="tooltipped" data-position="top" data-tooltip="voiced pharyngeal/epiglottal tap/flap" onclick="add('ʡ̆')">ʡ̆</a></td>
+              <td colspan="2" class="grey"></td>
+            </tr>
+            <tr>
+              <td>Trill</td>
+              <td><a id="cons78" class="tooltipped" data-position="top" data-tooltip="voiceless bilabial trill" onclick="add('ʙ̥')">ʙ̥</a></td>              
+              <td><a id="cons79" class="tooltipped" data-position="top" data-tooltip="voiced bilabial trill" onclick="add('ʙ')">ʙ</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons80" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar trill" onclick="add('r̥')">r̥</a></td>              
+              <td><a id="cons81" class="tooltipped" data-position="top" data-tooltip="voiced alveolar trill" onclick="add('r')">r</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons82" class="tooltipped" data-position="top" data-tooltip="voiceless retroflex trill" onclick="add('ɽ̊r̥')">ɽ̊r̥</a></td>              
+              <td><a id="cons83" class="tooltipped" data-position="top" data-tooltip="voiced retroflex trill" onclick="add('ɽr')">ɽr</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td colspan="2" class="grey">&nbsp;</td>
+              <td><a id="cons84" class="tooltipped" data-position="top" data-tooltip="voiceless uvular trill" onclick="add('ʀ̥')">ʀ̥</a></td>
+              <td><a id="cons85" class="tooltipped" data-position="top" data-tooltip="voiced uvular trill" onclick="add('ʀ')">ʀ</a></td>
+              <td><a id="cons86" class="tooltipped" data-position="top" data-tooltip="voiceless pharyngeal/epiglottal trill" onclick="add('ʜ')">ʜ</a></td>
+              <td><a id="cons87" class="tooltipped" data-position="top" data-tooltip="voiced uvular trill" onclick="add('ʢ')">ʢ</a></td>
+              <td colspan="2" class="grey">&nbsp;</td>
             </tr>
             <tr>
               <td>Lateral fricative</td>
               <td colspan="4" class="grey"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td colspan="2" class="grey"></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons88" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar lateral fricative" onclick="add('ɬ')">ɬ</a></td>
+              <td><a id="cons89" class="tooltipped" data-position="top" data-tooltip="voiced alveolar lateral fricative" onclick="add('ɮ')">ɮ</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons90" class="tooltipped" data-position="top" data-tooltip="voiceless retroflex lateral fricative" onclick="add('ɭ̊˔')">ɭ̊˔</a></td>
+              <td><a id="cons91" class="tooltipped" data-position="top" data-tooltip="voiced retroflex lateral fricative" onclick="add('ɭ˔')">ɭ˔</a></td>
+              <td><a id="cons92" class="tooltipped" data-position="top" data-tooltip="voiceless palatal lateral fricative" onclick="add('ʎ̝̊')">ʎ̝̊</a></td>
+              <td><a id="cons93" class="tooltipped" data-position="top" data-tooltip="voiced palatal lateral fricative" onclick="add('ʎ̝')">ʎ̝</a></td>
+              <td><a id="cons94" class="tooltipped" data-position="top" data-tooltip="voiceless velar lateral fricative" onclick="add('ʟ̝̊')">ʟ̝̊</a></td>
+              <td><a id="cons95" class="tooltipped" data-position="top" data-tooltip="voiced velar lateral fricative" onclick="add('ʟ̝')">ʟ̝</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td colspan="4" class="grey">&nbsp;</td>
             </tr>
             <tr>
               <td>Lateral approximant</td>
               <td colspan="4" class="grey"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td colspan="2" class="grey"></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons96" class="tooltipped" data-position="top" data-tooltip="voiced alveolar lateral approximant" onclick="add('l')">l</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons97" class="tooltipped" data-position="top" data-tooltip="voiced retroflex lateral approximant" onclick="add('ɭ')">ɭ</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons98" class="tooltipped" data-position="top" data-tooltip="voiced palatal lateral approximant" onclick="add('ʎ')">ʎ</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons99" class="tooltipped" data-position="top" data-tooltip="voiced velar lateral approximant" onclick="add('ʟ')">ʟ</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons100" class="tooltipped" data-position="top" data-tooltip="voiced uvular lateral approximant" onclick="add('ʟ̠')">ʟ̠</a></td>
+              <td colspan="4" class="grey">&nbsp;</td>
             </tr>
             <tr>
               <td>Lateral tap/flap</td>
               <td colspan="4" class="grey"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td colspan="2" class="grey"></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons101" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar lateral flap" onclick="add('ɺ̥')">ɺ̥</a></td>
+              <td><a id="cons102" class="tooltipped" data-position="top" data-tooltip="voiced alveolar lateral flap" onclick="add('ɺ')">ɺ</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><a id="cons103" class="tooltipped" data-position="top" data-tooltip="voiceless retroflex lateral flap" onclick="add('ɭ̥̆')">ɭ̥̆</a></td>
+              <td><a id="cons104" class="tooltipped" data-position="top" data-tooltip="voiced retroflex lateral flap" onclick="add('ɭ̆')">ɭ̆</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons105" class="tooltipped" data-position="top" data-tooltip="voiced palatal lateral flap" onclick="add('ʎ̆')">ʎ̆</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons106" class="tooltipped" data-position="top" data-tooltip="voiced velar lateral tap" onclick="add('ʟ̆')">ʟ̆</a></td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td colspan="4" class="grey">&nbsp;</td>
             </tr>
           </table>
         </div>

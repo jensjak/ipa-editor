@@ -191,11 +191,14 @@ langSelection.addEventListener('change', function () {
       idList = 
       [
         'vow1', 'vow2',
-        'cons2', 'cons6',
-        'cons14', 'cons15'
+        'cons2', 'cons6', 'cons12',
+        'cons14', 'cons15','cons20','cons21', 'cons26', 'cons27', 'cons31'
       ];
     idList2 = [
-      'cons1', 'cons3', 'cons4', 'cons5'
+      'cons1', 'cons3', 'cons4', 'cons5', 'cons7', 'cons8', 'cons9',
+      'cons10', 'cons11', 'cons13', 'cons16', 'cons17', 'cons18',
+      'cons19', 'cons22', 'cons23', 'cons24', 'cons25', 'cons28', 'cons29',
+      'cons30'
     ];
     break;
   }

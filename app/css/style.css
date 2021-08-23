@@ -36,10 +36,16 @@ table a.hvg1:hover{
 }
 table a.hvg2{
   background: #FF0000;
+  opacity: 0.1;
 }
 table a.hvg2:hover{
   background: #FF5500;
 }
+
+table#consonantsTable td{
+  border-right: 1px solid #ccc;
+}
+
 
 .drag-box {
   user-select: none;
