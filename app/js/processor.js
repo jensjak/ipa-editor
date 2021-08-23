@@ -1,6 +1,8 @@
 //initialize materialcss
 M.AutoInit();
 
+console.log(unicode)
+
 // disable buttons on page load
 const bracketsBtns = document.querySelectorAll('a.bBtn');
 bracketsBtns.forEach(function (btn) {
@@ -13,7 +15,7 @@ var injectedHTML = document.createElement("DIV");
   <dragBoxBar id="dragBoxBar" class="no-select"></dragBoxBar>\
   <injectedBox id="injectedBox"><form>\
     <div class="input-field">\
-  <textarea id="textInput" class="materialize-textarea" spellcheck="false" onchange="calcCounts()"></textarea></div></form>\
+  <textarea id="textInput" class="materialize-textarea" spellcheck="false" onchange="updateCounters()"></textarea></div></form>\
 </injectedBox>\
   </dragBox>';
 
@@ -167,6 +169,7 @@ let idList = [], vowelList = [], consList = [];
 let resetLastList = function () {
   document.querySelectorAll('td > a').forEach(function (elem){
     elem.classList.remove('hvg1', 'hvg2');
+    console.log(elem.innerHTML, elem.id)
   })
   idList = [], vowelList = [], consList = [];
 }
@@ -186,7 +189,7 @@ langSelection.addEventListener('change', function () {
     case "2":
       resetLastList();
       vowelList = [1,2];
-      consList = [2,6,12,14,15,20,21,26,27,31];
+      consList = [2,6,12,14,15,20,21,26,27,31,42,43,32,33,34,35,53,55,57,58,61,66,96];
     break;
   }
   vowelList.forEach(function (vowel){
