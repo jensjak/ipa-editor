@@ -4,5 +4,18 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+  line-height: 1.2;
+}
+
+#vowelTable a {
+  font-size: 18px;
+  cursor: pointer;
+  background: #666;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px 8px 3px 8px;
+}
+#vowelTable a:hover {
+  background: #aeaeae;
+  color: #000;
 }

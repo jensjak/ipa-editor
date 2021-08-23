@@ -32,6 +32,46 @@
       <form class="col s12">
         <div class="row">
           <div class="col s6">
+            <table id="vowelTable" class="table">
+              <tr>
+                <td></td>
+                <td colspan="2">Front</td>
+                <td colspan="2">Central</td>
+                <td colspan="2">Back</td>
+              </tr>
+              <tr>
+                <td>Close</td>
+                <td><a onclick="add('i')">i</a> &bull; <a onclick="add('y')">y</a></td>
+                <td></td>
+                <td><a onclick="add('ɨ')">ɨ</a> &bull; <a onclick="add('ʉ')">ʉ</a></td>
+                <td></td>
+                <td><a onclick="add('ɯ')">ɯ</a> &bull; <a onclick="add('u')">u</a></td>
+              </tr>
+              <tr>
+                <td>Near-close</td>
+                <td></td>
+                <td><a onclick="add('ɪ')">ɪ</a> <a onclick="add('ʏ')">ʏ</a></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Close-mid</td>
+                <td>e &bull; ø</td>
+                <td></td>
+                <td>ɘ &bull; ɵ</td>
+                <td></td>
+                <td>ɤ &bull; o</td>
+              </tr>
+              <tr>
+              <td>Mid</td>
+              <td>e̞ &bull; ø̞</td>
+              <td></td>
+              <td>ə</td>
+              <td></td>
+              <td>ɤ̞ &bull; o̞</td>
+            </tr>
+            </table>
             <ul class="collection">
               <li class="collection-item">
                 a 
@@ -47,6 +87,8 @@
             <a class="waves-effect waves-light btn red" onclick="resetTextInput()"><i class="material-icons left">delete</i>Clear</a> <br />
             Word count: <span id="wordCountText">0</span> <br />
             Character count: <span id="charCountText">0</span>
+            <br /><br />
+            <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('[',']');">[...]</a> <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('/');">/.../</a> <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('{','}');">{...}</a>
           </div>
         </div>
         </div>
@@ -57,7 +99,7 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">About IPA</h5>
+            <h5 class="white-text">About <abbr title="International Phonetic Alphabet">IPA</abbr></h5>
             <p class="grey-text text-lighten-4">I will add a short description here at some point.</p>
           </div>
           <div class="col l3 s12">

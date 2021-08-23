@@ -12,7 +12,7 @@ let mainWindow
 function createMainWindow() {
   mainWindow = new BrowserWindow({
     title: 'APP NAME',
-    width: isDev ? 800 : 500,
+    width: isDev ? 850 : 850,
     height: 600,
     icon: `${__dirname}/assets/icons/icon.png`,
     resizable: isDev ? true : false,
