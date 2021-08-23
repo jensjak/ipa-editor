@@ -19,3 +19,16 @@ body {
   background: #aeaeae;
   color: #000;
 }
+
+#vowelTable a.hvg1{
+  background: #008000;
+}
+#vowelTable a.hvg1:hover{
+  background: #80ff00;
+}
+#vowelTable a.hvg2{
+  background: #FF0000;
+}
+#vowelTable a.hvg2:hover{
+  background: #FF5500;
+}

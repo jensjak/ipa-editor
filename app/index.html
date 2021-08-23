@@ -40,23 +40,23 @@
                 <td colspan="2">Back</td>
               </tr>
               <tr>
-                <td>Close</td>
-                <td><a onclick="add('i')">i</a> &bull; <a onclick="add('y')">y</a></td>
+                <td><strong>Close</strong></td>
+                <td><a id="vow1" class="tooltipped" data-position="top" data-tooltip="close front unrounded vowel" onclick="add('i')">i</a> &bull; <a id="vow2" class="tooltipped" data-position="top" data-tooltip="close front rounded vowel"  onclick="add('y')">y</a></td>
                 <td></td>
-                <td><a onclick="add('ɨ')">ɨ</a> &bull; <a onclick="add('ʉ')">ʉ</a></td>
+                <td><a class="tooltipped" data-position="top" data-tooltip="close central unrounded vowel"  onclick="add('ɨ')">ɨ</a> &bull; <a class="tooltipped" data-position="top" data-tooltip="close central rounded vowel"  onclick="add('ʉ')">ʉ</a></td>
                 <td></td>
-                <td><a onclick="add('ɯ')">ɯ</a> &bull; <a onclick="add('u')">u</a></td>
+                <td><a class="tooltipped" data-position="top" data-tooltip="close back unrounded vowel"  onclick="add('ɯ')">ɯ</a> &bull; <a class="tooltipped" data-position="top" data-tooltip="close back rounded vowel"  onclick="add('u')">u</a></td>
               </tr>
               <tr>
                 <td>Near-close</td>
                 <td></td>
-                <td><a onclick="add('ɪ')">ɪ</a> <a onclick="add('ʏ')">ʏ</a></td>
+                <td><a class="tooltipped" data-position="top" data-tooltip="near-close front unrounded vowel" onclick="add('ɪ')">ɪ</a> <a class="tooltipped" data-position="top" data-tooltip="near-close front rounded vowel" onclick="add('ʏ')">ʏ</a></td>
                 <td></td>
-                <td></td>
+                <td><a class="tooltipped" data-position="top" data-tooltip="near-close back rounded vowel" onclick="add('ʊ')">ʊ</a></td>
                 <td></td>
               </tr>
               <tr>
-                <td>Close-mid</td>
+                <td><strong>Close-mid</strong></td>
                 <td>e &bull; ø</td>
                 <td></td>
                 <td>ɘ &bull; ɵ</td>
@@ -64,13 +64,37 @@
                 <td>ɤ &bull; o</td>
               </tr>
               <tr>
-              <td>Mid</td>
-              <td>e̞ &bull; ø̞</td>
-              <td></td>
-              <td>ə</td>
-              <td></td>
-              <td>ɤ̞ &bull; o̞</td>
-            </tr>
+                <td>Mid</td>
+                <td>e̞ &bull; ø̞</td>
+                <td></td>
+                <td>ə</td>
+                <td></td>
+                <td>ɤ̞ &bull; o̞</td>
+              </tr>
+              <tr>
+                <td><strong>Open-Mid</strong></td>
+                <td> &bull; </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td> &bull; </td>
+              </tr>
+              <tr>
+                <td>Near-open</td>
+                <td> &bull; </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td> &bull; </td>
+              </tr>
+              <tr>
+                <td><strong>Open</strong></td>
+                <td> &bull; </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td> &bull; </td>
+              </tr>
             </table>
             <ul class="collection">
               <li class="collection-item">
@@ -79,6 +103,15 @@
                 <a class="waves-effect waves-light btn-small">æ</a>
               </li>
             </ul>
+          </div>
+          <br />
+          <div class="input-field col s6">
+            <select id="langSelection">
+              <option value="0" selected>All</option>
+              <option value="1">English</option>
+              <option value="2">German</option>
+            </select>
+            <label>Target Language</label>
           </div>
           <div class="input-field col s6">
             <textarea id="textInput" class="materialize-textarea" onchange="calcCounts()"></textarea>
