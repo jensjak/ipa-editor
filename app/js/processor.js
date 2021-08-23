@@ -162,50 +162,44 @@ textInput.onselect = function () {
 }
 
 const langSelection = document.getElementById('langSelection');
-let idList = [], idList2 = [];
+let idList = [], vowelList = [], consList = [];
 
 let resetLastList = function () {
-  idList.forEach(function (id){
-    document.getElementById(id).classList.remove('hvg1')
+  document.querySelectorAll('td > a').forEach(function (elem){
+    elem.classList.remove('hvg1', 'hvg2');
   })
-  idList2.forEach(function (id){
-    document.getElementById(id).classList.remove('hvg2')
-  })
-idList = [], idList2 = [];
+  idList = [], vowelList = [], consList = [];
 }
+
 langSelection.addEventListener('change', function () {
   switch(langSelection.value){
     // All
     case "0":
-      resetLastList()
+      resetLastList();
     break;
     // English
     case "1":
       resetLastList();
     idList = ['vow1'];
-    idList2 = ['vow2'];
     break;
     // German
     case "2":
       resetLastList();
-      idList = 
-      [
-        'vow1', 'vow2',
-        'cons2', 'cons6', 'cons12',
-        'cons14', 'cons15','cons20','cons21', 'cons26', 'cons27', 'cons31'
-      ];
-    idList2 = [
-      'cons1', 'cons3', 'cons4', 'cons5', 'cons7', 'cons8', 'cons9',
-      'cons10', 'cons11', 'cons13', 'cons16', 'cons17', 'cons18',
-      'cons19', 'cons22', 'cons23', 'cons24', 'cons25', 'cons28', 'cons29',
-      'cons30'
-    ];
+      vowelList = [1,2];
+      consList = [2,6,12,14,15,20,21,26,27,31];
     break;
   }
-  idList.forEach(function (id){
-    document.getElementById(id).classList.add('hvg1')
+  vowelList.forEach(function (vowel){
+    idList.push('vow'+vowel);
   })
-  idList2.forEach(function (id){
-    document.getElementById(id).classList.add('hvg2')
+  consList.forEach(function (cons){
+    idList.push('cons'+cons);
+  })
+  document.querySelectorAll('td > a').forEach(function (elem){
+    if(idList.includes(elem.id)){
+      document.getElementById(elem.id).classList.add('hvg1')
+    } else {
+      if (langSelection.value != "0"){elem.classList.add('hvg2')} 
+  }
   })
 })
