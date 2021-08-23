@@ -1,13 +1,21 @@
 * {
   box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.2;
+  line-height: 1;
 }
 
-#vowelTable a {
+table a {
   font-size: 18px;
   cursor: pointer;
   background: #666;
@@ -15,20 +23,67 @@ body {
   border-radius: 5px;
   padding: 3px 8px 3px 8px;
 }
-#vowelTable a:hover {
+table a:hover {
   background: #aeaeae;
   color: #000;
 }
 
-#vowelTable a.hvg1{
+table a.hvg1{
   background: #008000;
 }
-#vowelTable a.hvg1:hover{
+table a.hvg1:hover{
   background: #80ff00;
 }
-#vowelTable a.hvg2{
+table a.hvg2{
   background: #FF0000;
 }
-#vowelTable a.hvg2:hover{
+table a.hvg2:hover{
   background: #FF5500;
+}
+
+.drag-box {
+  user-select: none;
+  background: #f0f0f0;
+  z-index: 2147483647;
+  position: fixed;
+  left: 40%;
+  top: 40%;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+}
+
+#dragBoxBar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background: #ccc;
+  width: 100%;
+  height: 30px;
+  cursor: move;
+  user-select: none;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.pointer-events {
+  pointer-events: none;
+}
+
+.no-border {
+  border: none;
+}
+
+#injectedBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: #eee;
+}
+
+#textInput{
+  padding: 20px;
+  line-height: 1.5;
+  font-size: 28px;
 }

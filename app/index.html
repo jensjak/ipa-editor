@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>IPA Editor</title>
   </head>
-  <body>
+  <body class="grey lighten-2">
     
-    <nav class="light-blue lighten-1" role="navigation">
+    <nav class="deep-orange darken-3" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">IPA Editor</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="#">Navbar Link</a></li>
@@ -27,6 +27,258 @@
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
     </nav>
+
+    <div class="valign-wrapper">
+      <div class="row">
+        <div class="col l6 s12">
+          <table>
+            <tr>
+              <td rowspan="2">Place, Manner</td>
+              <td colspan="6">Labial</td>
+              <td colspan="8">Coronal</td>
+              <td colspan="6">Dorsal</td>
+              <td colspan="4">Laryngeal</td>
+            </tr>
+            <tr>
+              <td colspan="2">Bilabial</td>
+              <td colspan="2">Labiodental</td>
+              <td colspan="2">Linguolabial</td>
+              <td colspan="2">Dental</td>
+              <td colspan="2">Alveolar</td>
+              <td colspan="2">Postalveolar</td>
+              <td colspan="2">Retroflex</td>
+              <td colspan="2">Palatal</td>
+              <td colspan="2">Velar</td>
+              <td colspan="2">Uvular</td>
+              <td colspan="2">Pharyngeal/epiglottal</td>
+              <td colspan="2">Glottal</td>
+            </tr>
+            <tr>
+              <td>Nasal</td>
+              <td><a id="cons1" class="tooltipped" data-position="top" data-tooltip="voiceless bilabial nasal" onclick="add('m̥')">m̥</a></td>
+              <td><a id="cons2" class="tooltipped" data-position="top" data-tooltip="voiced bilabial nasal" onclick="add('m')">m</a></td>
+              <td></td>
+              <td><a id="cons3" class="tooltipped" data-position="top" data-tooltip="voiced labiodental nasal" onclick="add('ɱ')">ɱ</a></td>
+              <td></td>
+              <td><a id="cons4" class="tooltipped" data-position="top" data-tooltip="voiced linguolabial nasal" onclick="add('n̼')">n̼</a></td>
+              <td colspan="3"><a id="cons5" class="tooltipped" data-position="top" data-tooltip="voiceless alveolar nasal" onclick="add('n̥')">n̥</a></td>
+              <td colspan="3"><a id="cons6" class="tooltipped" data-position="top" data-tooltip="voiced alveolar nasal" onclick="add('n')">n</a></td>
+              <td><a id="cons7" class="tooltipped" data-position="top" data-tooltip="voiceless retroflex nasal" onclick="add('ɳ̊')">ɳ̊</a></td>
+              <td><a id="cons8" class="tooltipped" data-position="top" data-tooltip="voiced retroflex nasal" onclick="add('ɳ')">ɳ</a></td>
+              <td><a id="cons9" class="tooltipped" data-position="top" data-tooltip="voiceless palatal nasal" onclick="add('ɲ̊')">ɲ̊</a></td>
+              <td><a id="cons10" class="tooltipped" data-position="top" data-tooltip="voiced palatal nasal" onclick="add('ɲ')">ɲ</a></td>
+              <td><a id="cons11" class="tooltipped" data-position="top" data-tooltip="voiceless velar nasal" onclick="add('ŋ̊')">ŋ̊</a></td>
+              <td><a id="cons12" class="tooltipped" data-position="top" data-tooltip="voiced velar nasal" onclick="add('ŋ')">ŋ</a></td>
+              <td>&nbsp;</td>
+              <td><a id="cons13" class="tooltipped" data-position="top" data-tooltip="voiced uvular nasal" onclick="add('ɴ')">ɴ</a></td>
+              <td class="grey" colspan="2"></td>
+              <td class="grey" colspan="2"></td>
+            </tr>
+            <tr>
+              <td>Plosive</td>
+              <td><a id="cons14" class="tooltipped" data-position="top" data-tooltip="voiceless bilabial plosive" onclick="add('p')">p</a></td>
+              <td><a id="cons15" class="tooltipped" data-position="top" data-tooltip="voiced bilabial plosive" onclick="add('b')">b</a></td>
+              <td><a id="cons16" class="tooltipped" data-position="top" data-tooltip="voiceless labiodental plosive" onclick="add('p̪')">p̪</a></td>
+              <td><a id="cons17" class="tooltipped" data-position="top" data-tooltip="voiced labiodental plosive" onclick="add('b̪')">b̪</a></td>
+              <td><a id="cons18" class="tooltipped" data-position="top" data-tooltip="voiceless linguolabial plosive" onclick="add('t̼')">t̼</a></td>
+              <td><a id="cons19" class="tooltipped" data-position="top" data-tooltip="voiced linguolabial plosive" onclick="add('d̼')">d̼</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="grey"></td>
+              <td></td>
+              <td class="grey"></td>
+            </tr>
+            <tr>
+              <td>Sibilant Fricative</td>
+              <td colspan="6" class="grey"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="grey"></td>
+              <td></td>
+              <td class="grey"></td>
+            </tr>
+            <tr>
+              <td>Non-sibilant Fricative</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="grey"></td>
+              <td></td>
+              <td class="grey"></td>
+            </tr>
+            <tr>
+              <td>Approximant</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="grey"></td>
+              <td></td>
+              <td class="grey"></td>
+            </tr>
+            <tr>
+              <td>Tap/Flap</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="grey"></td>
+              <td></td>
+              <td class="grey"></td>
+            </tr>
+            <tr>
+              <td>Lateral fricative</td>
+              <td colspan="4" class="grey"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="2" class="grey"></td>
+            </tr>
+            <tr>
+              <td>Lateral approximant</td>
+              <td colspan="4" class="grey"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="2" class="grey"></td>
+            </tr>
+            <tr>
+              <td>Lateral tap/flap</td>
+              <td colspan="4" class="grey"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td colspan="2" class="grey"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
    
     <div class="row">
       <form class="col s12">
@@ -96,13 +348,6 @@
                 <td> &bull; </td>
               </tr>
             </table>
-            <ul class="collection">
-              <li class="collection-item">
-                a 
-                <a class="waves-effect waves-light btn-small" onclick="add('ɑ')">ɑ</a>
-                <a class="waves-effect waves-light btn-small">æ</a>
-              </li>
-            </ul>
           </div>
           <br />
           <div class="input-field col s6">
@@ -113,22 +358,18 @@
             </select>
             <label>Target Language</label>
           </div>
-          <div class="input-field col s6">
-            <textarea id="textInput" class="materialize-textarea" onchange="calcCounts()"></textarea>
-            <label for="textInput">Text Input</label>
+
           <div class="row">
-            <a class="waves-effect waves-light btn red" onclick="resetTextInput()"><i class="material-icons left">delete</i>Clear</a> <br />
-            Word count: <span id="wordCountText">0</span> <br />
+            <a class="waves-effect waves-light btn red" onclick="resetTextInput()"><i class="material-icons left">delete</i>Clear</a>Word count: <span id="wordCountText">0</span> <br />
             Character count: <span id="charCountText">0</span>
-            <br /><br />
             <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('[',']');">[...]</a> <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('/');">/.../</a> <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('{','}');">{...}</a>
           </div>
-        </div>
+
         </div>
       </form>
     </div>
   
-    <footer class="page-footer orange">
+    <footer class="page-footer deep-orange darken-3">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">

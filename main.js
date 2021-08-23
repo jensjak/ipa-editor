@@ -12,8 +12,8 @@ let mainWindow
 function createMainWindow() {
   mainWindow = new BrowserWindow({
     title: 'APP NAME',
-    width: isDev ? 850 : 850,
-    height: 600,
+    width: isDev ? 1080 : 1080,
+    height: 780,
     icon: `${__dirname}/assets/icons/icon.png`,
     resizable: isDev ? true : false,
     backgroundColor: 'white',
@@ -21,10 +21,6 @@ function createMainWindow() {
       nodeIntegration: true,
     },
   })
-
-  if (isDev) {
-    //mainWindow.webContents.openDevTools()
-  }
 
   mainWindow.loadFile('./app/index.html')
 }
