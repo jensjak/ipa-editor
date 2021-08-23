@@ -1,8 +1,6 @@
 //initialize materialcss
 M.AutoInit();
 
-console.log(unicode)
-
 // disable buttons on page load
 const bracketsBtns = document.querySelectorAll('a.bBtn');
 bracketsBtns.forEach(function (btn) {

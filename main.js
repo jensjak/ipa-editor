@@ -2,7 +2,7 @@ const { app, BrowserWindow, Menu } = require('electron')
 const log = require('electron-log')
 
 // Set env
-process.env.NODE_ENV = 'production'
+process.env.NODE_ENV = 'development'
 
 const isDev = process.env.NODE_ENV !== 'production' ? true : false
 const isMac = process.platform === 'darwin' ? true : false
@@ -11,8 +11,8 @@ let mainWindow
 
 function createMainWindow() {
   mainWindow = new BrowserWindow({
-    title: 'APP NAME',
-    width: isDev ? 1080 : 1080,
+    title: 'IPA Editor',
+    width: isDev ? 1280 : 1280,
     height: 780,
     icon: `${__dirname}/assets/icons/icon.png`,
     resizable: isDev ? true : false,
