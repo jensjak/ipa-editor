@@ -12,10 +12,10 @@ let mainWindow
 function createMainWindow() {
   mainWindow = new BrowserWindow({
     title: 'IPA Editor',
-    width: isDev ? 1280 : 1280,
-    height: 780,
+    width: isDev ? 1560 : 1560,
+    height: 900,
     icon: `${__dirname}/assets/icons/icon.png`,
-    resizable: isDev ? true : false,
+    resizable: isDev ? false : false,
     backgroundColor: 'white',
     webPreferences: {
       nodeIntegration: true,

@@ -15,7 +15,7 @@ body {
   line-height: 1;
 }
 
-h1, h2, h3, h4, h5, h6, .desc-title{
+h1, h2, h3, h4, h5, h6, .desc-title, #logo-container1{
   font-family: 'Noto Serif', serif;
 }
 
@@ -105,4 +105,12 @@ p.desc{
 
 .desc-title{
   font-weight: 700;
+}
+
+.enlarge{
+  font-size: 32px;
+}
+
+#unicodeInput{
+  width: 50px;
 }

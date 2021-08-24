@@ -21,20 +21,20 @@
     <nav class="deep-orange darken-3" role="navigation">
       <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">IPA Editor</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#">Navbar Link</a></li>
+          <li><a href="#">About</a></li>
         </ul>
 
         <ul id="nav-mobile" class="sidenav">
-          <li><a href="#">Navbar Link</a></li>
+          <li><a href="#">About</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       </div>
     </nav>
 
-    <div class="valign-wrapper">
+    <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <table id="consonantsTable">
+          <table id="consonantsTable" class="table hvgTable">
             <tr>
               <td rowspan="2">Place, Manner</td>
               <td colspan="6">Labial</td>
@@ -298,7 +298,7 @@
           <p class="desc"><span class="desc-title">Non-pulmonic consonants.</span> Symbols to the right are <em>voiced</em>, to the left are <em>voiceless</em>. Dark grey areas denote articulations judged impossible.</p>
         </div>
       </div>
-    </div>
+    
 
 
    
@@ -306,7 +306,7 @@
       <form class="col s12">
         <div class="row">
           <div class="col s6">
-            <table id="vowelTable" class="table">
+            <table id="vowelTable" class="table hvgTable">
               <tr>
                 <td></td>
                 <td colspan="2">Front</td>
@@ -372,28 +372,122 @@
             </table>
             <p class="desc"><span class="desc-title">Vowels.</span> Vowels beside dots are: <em>unrounded</em> &bull; <em>rounded</em></p>
           </div>
-          <br />
-          <div class="input-field col s6">
-            <select id="langSelection">
-              <option value="0" selected>All</option>
-              <option value="1">English</option>
-              <option value="2">German</option>
-            </select>
-            <label>Target Language</label>
-          </div>
 
           <div class="row">
-            <a class="waves-effect waves-light btn red" onclick="resetTextInput()"><i class="material-icons left">delete</i>Clear</a>Word count: <span id="wordCountText">0</span> <br />
-            Character count: <span id="charCountText">0</span>
-            <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('[',']');">[...]</a> <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('/');">/.../</a> <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('{','}');">{...}</a> 
-             <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('(',')');">(...)</a> 
-            <a class="waves-effect waves-light btn-small bBtn" onclick="enclose('⸨','⸩');">⸨...⸩</a>  
+            <ul class="collection col s6">
+              <li class="collection-item">
+                <div class="input-field">
+                  <select id="langSelection">
+                    <option value="0" selected>All</option>
+                    <option value="1">English</option>
+                    <option value="2">German</option>
+                  </select>
+                  <label>Target Language</label>
+                </div>
+              </li>
+              <li class="collection-item">
+                    <a class="waves-effect waves-light btn red" onclick="resetTextInput()"><i class="material-icons left">delete</i>Clear</a>
+              </li>
+              <li class="collection-item">
+                    Word count: <span id="wordCountText">0</span>
+              </li>
+              <li class="collection-item">
+                    Character count: <span id="charCountText">0</span>
+              </li>
+              <li class="collection-item">
+              
+              <input type="text" id="unicodeInput" onchange="UpdateLivePreview()" onkeydown="limit(this);" onkeyup="limit(this);"> <a class="waves-effect waves-light btn-small" id="LivePreview" onclick="add(Result)">+</a>
+              <p class="desc"><span class="desc-title">Unicode Input.</span> Here you can enter an Unicode code point (only enter the numeral digits, e.g. U+<b>16803</b>). The corresponding glyph will be previewed on the button next to the Input field and can be reproduced.</p>
+              </li>
+              <li class="collection-item">
+                    <a class="waves-effect waves-light btn-small bBtn tooltipped" data-position="top" data-tooltip="Phonetic transcription" onclick="enclose('[',']');">[...]</a> 
+                    <a class="waves-effect waves-light btn-small bBtn tooltipped" data-position="top" data-tooltip="Phonemic transcription" onclick="enclose('/');">/.../</a> 
+                    <a class="waves-effect waves-light btn-small bBtn tooltipped" data-position="top" data-tooltip="Prosodic transcription" onclick="enclose('{','}');">{...}</a> 
+                    <a class="waves-effect waves-light btn-small bBtn tooltipped" data-position="top" data-tooltip="Indistinguishable utterance" onclick="enclose('(',')');">(...)</a> 
+                    <a class="waves-effect waves-light btn-small bBtn tooltipped" data-position="top" data-tooltip="Sound obscured" onclick="enclose('⸨','⸩');">⸨...⸩</a>
+                    <p class="desc"><span class="desc-title">Transcription.</span> These become available on selecting text.</p>  
+              </li>
+            </ul>
+
+            
           </div>
 
         </div>
       </form>
     </div>
-  
+
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="col s6">
+          <table>
+            <tr>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Primary stress" onclick="add('ˈ');">ˈ</a></td>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Secondary stress" onclick="add('ˌ');">ˌ</a></td>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Long" onclick="add('\u02D0');">ː</a></td>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Half-long" onclick="add('ˑ');">ˑ</a></td>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Extra-short" onclick="add('\u111c');">◌̆</a></td>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Minor (foot) group" onclick="add('|');">|</a></td>
+              </tr>
+              <tr>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Major (intonation) group" onclick="add('‖');">‖</a></td>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Syllable break" onclick="add('.');">.</a></td>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Linking (absence of a break)" onclick="add('‿');">‿</a></td>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Global rise" onclick="add('↗︎');">↗︎</a></td>
+                  <td><a class="waves-effect waves-light btn-small tooltipped" data-position="top" data-tooltip="Global fall" onclick="add('↘︎');">↘︎</a></td>
+            </tr>
+          </table>
+                <p class="desc"><span class="desc-title">Suprasegmentals.</span></p>
+          </div>
+          <div class="col s6">
+            <table>
+              <tr>
+                <td class="enlarge"><a class="tooltipped" data-position="top" data-tooltip="Combining Ring Below" onclick="add('\u0325')">◌̥</a></td>
+                <td colspan="2" class="enlarge"><a class="tooltipped" data-position="top" data-tooltip="Combining Ring Above" onclick="add('\u030A')">◌̊</a></td>
+                <td class="yellow lighten-3">Voiceless</td>
+                <td></td>
+                <td></td>
+                <td class="yellow lighten-3"></td>
+                <td></td>
+                <td></td>
+                <td class="yellow lighten-3"></td>
+              </tr>
+            </table>
+            <p class="desc"><span class="desc-title">Diacritics.</span> They combine with the last typed character.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s12">
+        <div class="row">
+          <div class="col s6">
+            <ul class="collection">
+              <li class="collection-item">
+                <a class="waves-effect waves-light btn tooltipped" data-tooltip="Tone 1" onclick="add('\u0304')">◌̄</a>
+                <a class="waves-effect waves-light btn tooltipped" data-tooltip="Tone 2" onclick="add('\u0301')">◌́</a>
+                <a class="waves-effect waves-light btn tooltipped" data-tooltip="Tone 3" onclick="add('\u030C')">◌̌</a>
+                <a class="waves-effect waves-light btn tooltipped" data-tooltip="Tone 4" onclick="add('\u0340')">◌̀</a>
+                <div class="right">
+                <a class="waves-effect waves-light btn tooltipped blue" data-tooltip="Tone 1 (auto mode)" onclick="autoPinyin('\u0304')">◌̄</a>
+                <a class="waves-effect waves-light btn tooltipped blue" data-tooltip="Tone 2 (auto mode)" onclick="autoPinyin('\u0301')">◌́</a>
+                <a class="waves-effect waves-light btn tooltipped blue" data-tooltip="Tone 3 (auto mode)" onclick="autoPinyin('\u030C')">◌̌</a>
+                <a class="waves-effect waves-light btn tooltipped blue" data-tooltip="Tone 4 (auto mode)" onclick="autoPinyin('\u0340')">◌̀</a>
+              </div>
+              </li>
+            </ul>        
+            <p class="desc"><span class="desc-title">PinYin (拼音) tone marks.</span> These are not part of the IPA chart but useful for transcribing chinese characters. <em>auto mode"</em> automatically inserts the tone mark at the correct vowel, only works for a single Hanzi.</p>
+          </div>
+          <div class="col s6">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Container end -->
+  </div>
+
     <footer class="page-footer deep-orange darken-3">
       <div class="container">
         <div class="row">
@@ -402,16 +496,14 @@
             <p class="grey-text text-lighten-4">I will add a short description here at some point.</p>
           </div>
           <div class="col l3 s12">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="white-text" href="https://www.internationalphoneticassociation.org/content/full-ipa-chart">Full IPA Chart</a></li>
-            </ul>
+            <h5 class="white-text">About this App</h5>
+            <p class="grey-text text-lighten-4">I don't know.</p>
           </div>
         </div>
       </div>
       <div class="footer-copyright">
         <div class="container">
-        Made by <a class="orange-text text-lighten-3" href="http://jensjakob.eu/">Jens Jakob</a>
+        V 1.0 - 2021-08 | Made by <a class="orange-text text-lighten-3" href="http://jensjakob.eu/" target="_blank">Jens Jakob</a>
         </div>
       </div>
     </footer>

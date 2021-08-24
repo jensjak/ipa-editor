@@ -165,9 +165,9 @@ const langSelection = document.getElementById('langSelection');
 let idList = [], vowelList = [], consList = [];
 
 let resetLastList = function () {
-  document.querySelectorAll('td > a').forEach(function (elem){
+  document.querySelectorAll('.hvgTable td > a').forEach(function (elem){
     elem.classList.remove('hvg1', 'hvg2');
-    console.log(elem.innerHTML, elem.id)
+    //console.log(elem.innerHTML, elem.id)
   })
   idList = [], vowelList = [], consList = [];
 }
@@ -177,15 +177,19 @@ langSelection.addEventListener('change', function () {
     // All
     case "0":
       resetLastList();
+      M.toast({html: 'Target language set to All'})
     break;
-    // English
+    // American English
     case "1":
       resetLastList();
-    idList = ['vow1'];
+      M.toast({html: 'Target language set to American English'})
+    vowelList = [1,6,10,9,7,12,21,25,27,32];
+    consList = [2,6,12,14,15,20,21,26,27,42,43,46,47,32,33,34,35,61,64,66,67,96];
     break;
     // German
     case "2":
       resetLastList();
+      M.toast({html: 'Target language set to German'})
       vowelList = [1,2,6,7,8,9,10,11,15,18,21,22,26,29];
       consList = [2,6,12,14,15,20,21,26,27,31,42,43,32,33,34,35,53,55,57,58,61,66,96];
     break;
@@ -196,7 +200,7 @@ langSelection.addEventListener('change', function () {
   consList.forEach(function (cons){
     idList.push('cons'+cons);
   })
-  document.querySelectorAll('td > a').forEach(function (elem){
+  document.querySelectorAll('.hvgTable td > a').forEach(function (elem){
     if(idList.includes(elem.id)){
       document.getElementById(elem.id).classList.add('hvg1')
     } else {
@@ -204,3 +208,62 @@ langSelection.addEventListener('change', function () {
   }
   })
 })
+
+var vowelTest = (function () {
+  var re = /^[aeiou]$/i;
+  return function (s) {
+    return re.test(s);
+  }
+})();
+function limit(element) {
+    var max_chars = 5;
+
+    if (element.value.length > max_chars) {
+      element.value = element.value.substr(0, max_chars);
+    }
+  }
+  
+// JS will only naturally handle characters up to 0xFFFF, this fixes it
+  function fixedFromCharCode (codePt) {
+    if (codePt > 0xFFFF) {
+        codePt -= 0x10000;
+        return String.fromCharCode(0xD800 + (codePt >> 10), 0xDC00 + (codePt & 0x3FF));
+    }
+    else {
+        return String.fromCharCode(codePt);
+    }
+}
+
+function UpdateLivePreview(){
+  var UnicodeInput = document.getElementById("unicodeInput");
+  var LivePreview = document.getElementById("LivePreview");
+  
+    Result = fixedFromCharCode((parseInt(UnicodeInput.value, 16)));
+    LivePreview.innerHTML = Result;
+}
+function autoPinyin(char) {
+  let Index, val = textInput.value, arr = Array.from(val);
+
+  if (val.indexOf('a') !== -1) {
+    Index = val.indexOf('a');
+  }
+  else if (val.indexOf('e') !== -1) {
+    Index = val.indexOf('e');
+  }
+  else if (val.indexOf('ou') !== -1) {
+    Index = val.indexOf('ou', 0);
+  } else if (val.indexOf('nü') !== -1) {
+    Index = 1;
+  } else {
+    arr2 = arr.reverse();
+    let i;
+    for (i = 0; i < val.length; i++) {
+      if (vowelTest(arr2[i]) === true) {
+        Index = val.indexOf(arr[i]);
+        break;
+      }
+    }
+  }
+  setCaretToPos(textInput,Index+char.length)
+  add(char)
+}
