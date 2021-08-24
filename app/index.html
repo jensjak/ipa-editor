@@ -7,6 +7,9 @@
       http-equiv="Content-Security-Policy"
       content="script-src 'self' 'unsafe-inline'"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Serif&display=swap" rel="stylesheet">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
@@ -292,6 +295,7 @@
               <td colspan="4" class="grey">&nbsp;</td>
             </tr>
           </table>
+          <p class="desc"><span class="desc-title">Non-pulmonic consonants.</span> Symbols to the right are <em>voiced</em>, to the left are <em>voiceless</em>. Dark grey areas denote articulations judged impossible.</p>
         </div>
       </div>
     </div>
@@ -313,59 +317,60 @@
                 <td><strong>Close</strong></td>
                 <td><a id="vow1" class="tooltipped" data-position="top" data-tooltip="close front unrounded vowel" onclick="add('i')">i</a> &bull; <a id="vow2" class="tooltipped" data-position="top" data-tooltip="close front rounded vowel"  onclick="add('y')">y</a></td>
                 <td></td>
-                <td><a class="tooltipped" data-position="top" data-tooltip="close central unrounded vowel"  onclick="add('ɨ')">ɨ</a> &bull; <a class="tooltipped" data-position="top" data-tooltip="close central rounded vowel"  onclick="add('ʉ')">ʉ</a></td>
+                <td><a id="vow3" class="tooltipped" data-position="top" data-tooltip="close central unrounded vowel"  onclick="add('ɨ')">ɨ</a> &bull; <a id="vow4" class="tooltipped" data-position="top" data-tooltip="close central rounded vowel"  onclick="add('ʉ')">ʉ</a></td>
                 <td></td>
-                <td><a class="tooltipped" data-position="top" data-tooltip="close back unrounded vowel"  onclick="add('ɯ')">ɯ</a> &bull; <a class="tooltipped" data-position="top" data-tooltip="close back rounded vowel"  onclick="add('u')">u</a></td>
+                <td><a id="vow5" class="tooltipped" data-position="top" data-tooltip="close back unrounded vowel"  onclick="add('ɯ')">ɯ</a> &bull; <a id="vow6" class="tooltipped" data-position="top" data-tooltip="close back rounded vowel"  onclick="add('u')">u</a></td>
               </tr>
               <tr>
                 <td>Near-close</td>
                 <td></td>
-                <td><a class="tooltipped" data-position="top" data-tooltip="near-close front unrounded vowel" onclick="add('ɪ')">ɪ</a> <a class="tooltipped" data-position="top" data-tooltip="near-close front rounded vowel" onclick="add('ʏ')">ʏ</a></td>
+                <td><a id="vow7" class="tooltipped" data-position="top" data-tooltip="near-close front unrounded vowel" onclick="add('ɪ')">ɪ</a> &bull; <a id="vow8" class="tooltipped" data-position="top" data-tooltip="near-close front rounded vowel" onclick="add('ʏ')">ʏ</a></td>
                 <td></td>
-                <td><a class="tooltipped" data-position="top" data-tooltip="near-close back rounded vowel" onclick="add('ʊ')">ʊ</a></td>
+                <td>&bull; <a id="vow9" class="tooltipped" data-position="top" data-tooltip="near-close back rounded vowel" onclick="add('ʊ')">ʊ</a></td>
                 <td></td>
               </tr>
               <tr>
                 <td><strong>Close-mid</strong></td>
-                <td>e &bull; ø</td>
+                <td><a id="vow10" class="tooltipped" data-position="top" data-tooltip="close-mid front unrounded vowel" onclick="add('e')">e</a> &bull; <a id="vow11" class="tooltipped" data-position="top" data-tooltip="close-mid front rounded vowel" onclick="add('ø')">ø</a></td>
                 <td></td>
-                <td>ɘ &bull; ɵ</td>
+                <td><a id="vow12" class="tooltipped" data-position="top" data-tooltip="close-mid central unrounded vowel" onclick="add('ɘ')">ɘ</a> &bull; <a id="vow13" class="tooltipped" data-position="top" data-tooltip="close-mid central rounded vowel" onclick="add('ɵ')">ɵ</a></td>
                 <td></td>
-                <td>ɤ &bull; o</td>
+                <td><a id="vow14" class="tooltipped" data-position="top" data-tooltip="close-mid back unrounded vowel" onclick="add('ɤ')">ɤ</a> &bull; <a id="vow15" class="tooltipped" data-position="top" data-tooltip="close-mid back rounded vowel" onclick="add('o')">o</a></td>
               </tr>
               <tr>
                 <td>Mid</td>
-                <td>e̞ &bull; ø̞</td>
+                <td><a id="vow16" class="tooltipped" data-position="top" data-tooltip="mid front unrounded vowel" onclick="add('e̞')">e̞</a> &bull; <a id="vow17" class="tooltipped" data-position="top" data-tooltip="mid front rounded vowel" onclick="add('ø̞')">ø̞</a></td>
                 <td></td>
-                <td>ə</td>
+                <td><a id="vow18" class="tooltipped" data-position="top" data-tooltip="mid central vowel" onclick="add('ə')">ə</a></td>
                 <td></td>
-                <td>ɤ̞ &bull; o̞</td>
+                <td><a id="vow19" class="tooltipped" data-position="top" data-tooltip="mid back unrounded vowel" onclick="add('ɤ̞')">ɤ̞</a> &bull; <a id="vow20" class="tooltipped" data-position="top" data-tooltip="mid back rounded vowel" onclick="add('o̞')">o̞</a></td>
               </tr>
               <tr>
                 <td><strong>Open-Mid</strong></td>
-                <td> &bull; </td>
+                <td><a id="vow21" class="tooltipped" data-position="top" data-tooltip="open-mid front unrounded vowel" onclick="add('ɛ')">ɛ</a> &bull; <a id="vow22" class="tooltipped" data-position="top" data-tooltip="open-mid front rounded vowel" onclick="add('œ')">œ</a></td>
                 <td></td>
+                <td><a id="vow23" class="tooltipped" data-position="top" data-tooltip="open-mid central unrounded vowel" onclick="add('ɜ')">ɜ</a> &bull; <a id="vow24" class="tooltipped" data-position="top" data-tooltip="open-mid central rounded vowel" onclick="add('ɞ')">ɞ</a></td>
                 <td></td>
-                <td></td>
-                <td> &bull; </td>
+                <td><a id="vow25" class="tooltipped" data-position="top" data-tooltip="open-mid back unrounded vowel" onclick="add('ʌ')">ʌ</a> &bull; <a id="vow26" class="tooltipped" data-position="top" data-tooltip="open-mid back rounded vowel" onclick="add('ɔ')">ɔ</a></td>
               </tr>
               <tr>
                 <td>Near-open</td>
-                <td> &bull; </td>
+                <td><a id="vow27" class="tooltipped" data-position="top" data-tooltip="near-open front unrounded vowel" onclick="add('æ')">æ</a> &bull; </td>
+                <td></td>
+                <td><a id="vow28" class="tooltipped" data-position="top" data-tooltip="near-open central vowel" onclick="add('ɐ')">ɐ</a></td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td> &bull; </td>
               </tr>
               <tr>
                 <td><strong>Open</strong></td>
-                <td> &bull; </td>
+                <td><a id="vow29" class="tooltipped" data-position="top" data-tooltip="open front unrounded vowel" onclick="add('a')">a</a> &bull; <a id="vow30" class="tooltipped" data-position="top" data-tooltip="open front rounded vowel" onclick="add('ɶ')">ɶ</a></td>
                 <td></td>
+                <td><a id="vow31" class="tooltipped" data-position="top" data-tooltip="open central unrounded vowel" onclick="add('ä')">ä</a> &bull;</td>
                 <td></td>
-                <td></td>
-                <td> &bull; </td>
+                <td><a id="vow32" class="tooltipped" data-position="top" data-tooltip="open back unrounded vowel" onclick="add('ɑ')">ɑ</a> &bull; <a id="vow33" class="tooltipped" data-position="top" data-tooltip="open back rounded vowel" onclick="add('ɒ')">ɒ</a></td>
               </tr>
             </table>
+            <p class="desc"><span class="desc-title">Vowels.</span> Vowels beside dots are: <em>unrounded</em> &bull; <em>rounded</em></p>
           </div>
           <br />
           <div class="input-field col s6">

@@ -186,7 +186,7 @@ langSelection.addEventListener('change', function () {
     // German
     case "2":
       resetLastList();
-      vowelList = [1,2];
+      vowelList = [1,2,6,7,8,9,10,11,15,18,21,22,26,29];
       consList = [2,6,12,14,15,20,21,26,27,31,42,43,32,33,34,35,53,55,57,58,61,66,96];
     break;
   }
