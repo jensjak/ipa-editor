@@ -32,21 +32,11 @@ const createMainWindow = () => {
 
   mainWindow.loadFile(path.join(__dirname, 'app/index.html'));
 
-  ipcMain.on('display-app-menu', (e, args) => {
-    if (isWindows && mainWindow) {
-      menu.popup({
-        window: mainWindow,
-        x: args.x,
-        y: args.y,
-      });
-    }
-  });
-
   ipcMain.on('closeApp', () => {
     app.quit();
   });
 
-  const sc = globalShortcut.register('CommandOrControl+X', () => {
+  globalShortcut.register('CommandOrControl+X', () => {
     app.quit();
   });
 
