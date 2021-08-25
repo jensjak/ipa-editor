@@ -142,6 +142,7 @@ table#consonantsTable td{
   width: 250px;
   height: 30px;
   padding: 10px;
+  cursor: pointer;
 }
 
 #title-bar-leftmenu li.clickedOn > ul.drop-menu li {
@@ -211,7 +212,7 @@ table#consonantsTable td{
 #app-content{
   position: relative;
   margin-top: 30px;
-  margin-bottom: 250px;
+  margin-bottom: 300px;
   flex-grow: 1;
   overflow-x: auto;
 }
@@ -285,6 +286,7 @@ p.desc, .modal p{
   width: 100%;
   bottom: 200px;
   padding: 10px;
+  height: 100px;
   color: #FFF;
 }
 
