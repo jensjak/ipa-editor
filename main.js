@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, ipcMain } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, globalShortcut } = require('electron');
 const path = require('path');
 const log = require('electron-log');
 
@@ -43,6 +43,10 @@ ipcMain.on(`display-app-menu`, function(e, args) {
 ipcMain.on('closeApp', () => {
   app.quit()
 })
+
+const sc = globalShortcut.register('CommandOrControl+X', function() {
+  app.quit()
+});
 
 ipcMain.on('minimizeApp', () => {
   mainWindow.minimize()

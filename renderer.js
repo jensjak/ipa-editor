@@ -29,3 +29,8 @@ maxResBtn.addEventListener('click', () => {
 minimizeBtn.addEventListener('click', () => {
     ipcRenderer.send('minimizeApp');
 });
+
+// menu
+fileMenuExit.addEventListener('click', () => {
+    ipcRenderer.send('closeApp');
+});

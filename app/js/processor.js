@@ -1,4 +1,8 @@
 window.addEventListener("DOMContentLoaded", () => {
+  const textInput = document.getElementById('textInput');
+  const charCountText = document.getElementById('charCountText');
+  const wordCountText = document.getElementById('wordCountText');
+  const historyArea = document.getElementById('historyArea');
   //initialize materialcss
   M.AutoInit();
 
@@ -12,75 +16,13 @@ window.addEventListener("DOMContentLoaded", () => {
     windowTitle.innerHTML = "IPA Editor V1.0.0";
 });
 
-var injectedHTML = document.createElement("DIV");
-    injectedHTML.innerHTML = '<dragBox id="dragBox" class="drag-box">\
-  <dragBoxBar id="dragBoxBar" class="no-select"></dragBoxBar>\
-  <injectedBox id="injectedBox"><form>\
-    <div class="input-field">\
-  <textarea id="textInput" class="materialize-textarea" spellcheck="false" onchange="updateCounters()"></textarea></div></form>\
-</injectedBox>\
-  </dragBox>';
+document.querySelector('#copyBtn').onclick = function(){
+  textInput.select();
+  document.execCommand('copy');
+}
 
-    document.body.appendChild(injectedHTML);
-
-    var isMouseDown,
-        initX,
-        initY,
-        height = injectedBox.offsetHeight,
-        width = injectedBox.offsetWidth,
-        dragBoxBar = document.getElementById('dragBoxBar');
-
-
-    dragBoxBar.addEventListener('mousedown', function(e) {
-        isMouseDown = true;
-        document.body.classList.add('no-select');
-        injectedBox.classList.add('pointer-events');
-        initX = e.offsetX;
-        initY = e.offsetY;
-        dragBox.style.opacity = 0.5;
-    })
-
-    dragBoxBar.addEventListener('mouseup', function(e) {
-        mouseupHandler();
-    })
-
-    document.addEventListener('mousemove', function(e) {
-        if (isMouseDown) {
-            var cx = e.clientX - initX,
-                cy = e.clientY - initY;
-            if (cx < 0) {
-                cx = 0;
-            }
-            if (cy < 0) {
-                cy = 0;
-            }
-            if (window.innerWidth - e.clientX + initX < width + 16) {
-                cx = window.innerWidth - width;
-            }
-            if (e.clientY > window.innerHeight - height - dragBoxBar.offsetHeight + initY) {
-                cy = window.innerHeight - dragBoxBar.offsetHeight - height;
-            }
-            dragBox.style.left = cx + 'px';
-            dragBox.style.top = cy + 'px';
-        }
-    })
-
-
-    document.addEventListener('mouseup', function(e) {
-        if (e.clientY > window.innerWidth || e.clientY < 0 || e.clientX < 0 || e.clientX > window.innerHeight) {
-            mouseupHandler();
-        }
-    });
-
-    function mouseupHandler() {
-        isMouseDown = false;
-        document.body.classList.remove('no-select');
-        injectedBox.classList.remove('pointer-events');
-        dragBox.style.opacity = 1;
-    }
-
-let textInput = document.getElementById('textInput');
-let charCountText = document.getElementById('charCountText'),charCount, wordCountText = document.getElementById('wordCountText'), wordCount;
+let charCount, wordCount;
+let charMemory = [];
 
 // simple character and word counters
 function updateCounters(){
@@ -115,6 +57,7 @@ function setCaretToPos (input, pos) {
 }
 
 function add(char) {
+  let temp = "";
     // add char at cursor position
     if (textInput.selectionStart || textInput.selectionStart == '0') {
         let startPos = textInput.selectionStart;
@@ -132,7 +75,27 @@ function add(char) {
   M.textareaAutoResize(textInput);
   textInput.focus();
   updateCounters();
+  
+  //charMemory
+  if(charMemory.includes(char)) {
+  const index = charMemory.indexOf(char);
+  if (index > -1) {
+  charMemory.splice(index, 1);
+  } 
+  charMemory.unshift(char);
+  } else {
+    charMemory.unshift(char);
+  }
+  if(charMemory.length > 10){
+    charMemory.pop(1);
+  }
+  charMemory.forEach( char => {
+    temp += `<a class="waves-effect waves-light btn" onclick="add('${char}')">${char}</a> `;
+    historyArea.innerHTML = temp;
+  }
+  )
 }
+
 
 function resetTextInput() {
   textInput.value='';
@@ -271,3 +234,17 @@ function autoPinyin(char) {
   setCaretToPos(textInput,Index+char.length)
   add(char)
 }
+
+function toggleMenu (element) {
+  element = document.getElementById(element);
+  element.classList.toggle('clickedOn');
+  console.log(element)
+}
+
+let els, appContent = document.getElementById('app-content');
+appContent.addEventListener('click', () =>{
+  els = document.getElementsByClassName("clickedOn");
+  Array.from(els).forEach((el) => {
+    el.classList.remove('clickedOn');
+  });
+})
