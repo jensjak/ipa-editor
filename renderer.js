@@ -1,4 +1,6 @@
+/* eslint-disable no-undef */
 // renderer.js
+// eslint-disable-next-line import/no-extraneous-dependencies
 const { ipcRenderer } = require('electron');
 
 const maxResBtn = document.getElementById('maxResBtn');

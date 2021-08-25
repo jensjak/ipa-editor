@@ -1,8 +1,8 @@
 const {
-  app, BrowserWindow, Menu, ipcMain, globalShortcut,
+  app, BrowserWindow, ipcMain, globalShortcut,
+// eslint-disable-next-line import/no-extraneous-dependencies
 } = require('electron');
 const path = require('path');
-const log = require('electron-log');
 
 // Set env
 process.env.NODE_ENV = 'development';
@@ -21,7 +21,7 @@ const createMainWindow = () => {
     frame: false, // application frame and app icon will be hidden
     autoHideMenuBar: true, // hides menu bar on top and will disable finder on
     icon: `${__dirname}/assets/icons/icon.png`,
-    resizable: !!isDev,
+    resizable: true,
     backgroundColor: 'white',
     webPreferences: {
       nodeIntegration: true,
@@ -36,7 +36,7 @@ const createMainWindow = () => {
     app.quit();
   });
 
-  globalShortcut.register('CommandOrControl+X', () => {
+  globalShortcut.register('CommandOrControl+P', () => {
     app.quit();
   });
 
@@ -65,30 +65,7 @@ const createMainWindow = () => {
 
 app.on('ready', () => {
   createMainWindow();
-
-  const mainMenu = Menu.buildFromTemplate(menu);
-  Menu.setApplicationMenu(mainMenu);
 });
-
-const menu = [
-  ...(isMac ? [{ role: 'appMenu' }] : []),
-  {
-    role: 'fileMenu',
-  },
-  ...(isDev
-    ? [
-      {
-        label: 'Developer',
-        submenu: [
-          { role: 'reload' },
-          { role: 'forcereload' },
-          { type: 'separator' },
-          { role: 'toggledevtools' },
-        ],
-      },
-    ]
-    : []),
-];
 
 app.on('window-all-closed', () => {
   if (!isMac) {

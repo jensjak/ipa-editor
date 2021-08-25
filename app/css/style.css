@@ -79,7 +79,6 @@ table#consonantsTable td{
 
 #title-bar a {
   text-decoration: none;
-  color: #FF5500;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -97,17 +96,23 @@ table#consonantsTable td{
 
 #title-bar-icon{
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   left: 0px;
   top: 0px;
   height: 30px;
   width: 30px;
-  background: #80ff00; /* TODO: placeholder, add icon or remove */
+}
+#title-bar-icon img{
+  width: 20px;
+  height: 20px;
 }
 
 #title-bar-leftmenu{
   position: absolute;
   top: 0px;
-  left: 40px;
+  left: 30px;
   user-select: none;
   display: inline-flex;
 }
@@ -130,9 +135,18 @@ table#consonantsTable td{
   position: relative;
 }
 
-#title-bar-leftmenu li:hover{
+#title-bar-leftmenu a,
+#title-bar-leftmenu ul.drop-menu li:hover > a{
+  color: #FFF;
+}
+#title-bar-leftmenu > li:hover > a, 
+#title-bar-leftmenu ul.drop-menu li:hover > a{
+  color: #aeaeae;
+}
+
+#title-bar-leftmenu li:hover,
+#title-bar-leftmenu li > ul.drop-menu:hover ~ #title-bar-leftmenu {
   background: #444;
-  color: #FF5500;
 }
 
 #title-bar-leftmenu ul.drop-menu li {
@@ -180,7 +194,7 @@ table#consonantsTable td{
 #title-bar-rightmenu > li{
   height: 30px;
   width: 40px;
-  color: #666;
+  color: #FFF;
   display: inline-flex;
   align-items:center;
 }
@@ -204,7 +218,6 @@ table#consonantsTable td{
 }
 
 .shortCutText{
-  color: #888;
   position: absolute;
   right: 0px;
   margin-right: 15px;
