@@ -1,12 +1,16 @@
-//initialize materialcss
-M.AutoInit();
+window.addEventListener("DOMContentLoaded", () => {
+  //initialize materialcss
+  M.AutoInit();
 
-// disable buttons on page load
-const bracketsBtns = document.querySelectorAll('a.bBtn');
-bracketsBtns.forEach(function (btn) {
-    btn.classList.add('disabled')
-})
+  // disable buttons on page load
+  const bracketsBtns = document.querySelectorAll('a.bBtn');
+  bracketsBtns.forEach(function (btn) {
+      btn.classList.add('disabled')
+  })
 
+  let windowTitle = document.getElementById('title-bar-title');
+    windowTitle.innerHTML = "IPA Editor V1.0.0";
+});
 
 var injectedHTML = document.createElement("DIV");
     injectedHTML.innerHTML = '<dragBox id="dragBox" class="drag-box">\
@@ -222,7 +226,7 @@ function limit(element) {
       element.value = element.value.substr(0, max_chars);
     }
   }
-  
+
 // JS will only naturally handle characters up to 0xFFFF, this fixes it
   function fixedFromCharCode (codePt) {
     if (codePt > 0xFFFF) {

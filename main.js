@@ -1,5 +1,6 @@
-const { app, BrowserWindow, Menu } = require('electron')
-const log = require('electron-log')
+const { app, BrowserWindow, Menu, ipcMain } = require('electron');
+const path = require('path');
+const log = require('electron-log');
 
 // Set env
 process.env.NODE_ENV = 'development'
@@ -9,20 +10,62 @@ const isMac = process.platform === 'darwin' ? true : false
 
 let mainWindow
 
-function createMainWindow() {
+const createMainWindow = () => {
   mainWindow = new BrowserWindow({
     title: 'IPA Editor',
-    width: isDev ? 1560 : 1560,
-    height: 900,
+    width: isDev ? 1400 : 1400,
+    height: isDev ? 1000 : 900,
+    frame: false, // application frame and app icon will be hidden
+    autoHideMenuBar: true, // hides menu bar on top and will disable finder on
     icon: `${__dirname}/assets/icons/icon.png`,
-    resizable: isDev ? false : false,
+    resizable: isDev ? true : false,
     backgroundColor: 'white',
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
+      preload: path.join(__dirname, "preload.js"),
     },
-  })
+  });
 
-  mainWindow.loadFile('./app/index.html')
+  mainWindow.loadFile(path.join(__dirname, 'app/index.html'));
+
+
+ipcMain.on(`display-app-menu`, function(e, args) {
+  if (isWindows && mainWindow) {
+    menu.popup({
+      window: mainWindow,
+      x: args.x,
+      y: args.y
+    });
+  }
+});
+
+ipcMain.on('closeApp', () => {
+  app.quit()
+})
+
+ipcMain.on('minimizeApp', () => {
+  mainWindow.minimize()
+})
+
+ipcMain.on('maximizeRestoreApp', () => {
+    if(mainWindow.isMaximized()){
+      mainWindow.restore();
+    } else {
+      mainWindow.maximize();
+    }
+})
+
+// Check if maximized
+mainWindow.on('maximize', () => {
+  mainWindow.webContents.send('isMaximized')
+})
+
+// Check if restored
+mainWindow.on('unmaximize', () => {
+  mainWindow.webContents.send('isRestored')
+})
+
 }
 
 app.on('ready', () => {

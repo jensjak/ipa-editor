@@ -13,10 +13,27 @@ html {
 body {
   font-family: 'Noto Sans', sans-serif;
   line-height: 1;
+  overflow: hidden;
 }
 
 h1, h2, h3, h4, h5, h6, .desc-title, #logo-container1{
   font-family: 'Noto Serif', serif;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 table a {
@@ -50,6 +67,73 @@ table#consonantsTable td{
   border-right: 1px solid #ccc;
 }
 
+#title-bar{
+  background: #333;
+  height: 35px;
+  width: 100%;
+  position: fixed;
+  z-index: 2147483649;
+  flex-shrink: 0;
+}
+
+#title-bar-title{
+  color: #FFF;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  top: -35px;
+}
+
+#title-bar-rightmenu{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  user-select: none;
+}
+
+#title-bar-rightmenu li{
+  height: 35px;
+  width: 50px;
+  color: #666;
+  display: inline-flex;
+  align-items:center;
+}
+
+#title-bar-rightmenu li .material-icons{
+  margin: 0 auto;
+}
+
+#title-bar-rightmenu li:hover{
+  background: #777;
+  color: #FFF;
+}
+
+#title-bar-rightmenu li#closeBtn:hover{
+  background: #b63131;
+}
+
+#app-content{
+  position: relative;
+  margin-top: 35px;
+  flex-grow: 1;
+  overflow-x: auto;
+}
+
+.drag{
+  -webkit-app-region: drag;
+}
+
+.no-drag{
+  -webkit-app-region: no-drag;
+}
+
+#wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 .drag-box {
   user-select: none;
@@ -98,7 +182,7 @@ table#consonantsTable td{
   font-size: 28px;
 }
 
-p.desc{
+p.desc, .modal p{
   padding: 8px 12px;
   line-height: 1.5;
 }
