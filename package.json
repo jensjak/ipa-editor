@@ -25,7 +25,5 @@
     "eslint-plugin-import": "^2.24.2",
     "nodemon": "^2.0.12"
   },
-  "dependencies": {
-    "material-design-icons": "^3.0.1"
-  }
+  "dependencies": {}
 }

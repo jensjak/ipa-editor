@@ -37,3 +37,8 @@ minimizeBtn.addEventListener('click', () => {
 fileMenuExit.addEventListener('click', () => {
   ipcRenderer.send('closeApp');
 });
+
+// menu
+fileMenuSettings.addEventListener('click', () => {
+  ipcRenderer.send('openSettings');
+});

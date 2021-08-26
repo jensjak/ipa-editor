@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const windowTitle = document.getElementById('title-bar-title');
-  windowTitle.innerHTML = 'IPA Editor V1.0.0';
+  windowTitle.innerHTML = 'IPA Editor';
 });
 
 document.querySelector('#copyBtn').onclick = () => {
@@ -230,10 +230,11 @@ function fixedFromCharCode(codePt) {
   return String.fromCharCode(codePt);
 }
 
+let Result;
 function UpdateLivePreview() {
   const UnicodeInput = document.getElementById('unicodeInput');
   const LivePreview = document.getElementById('LivePreview');
-  const Result = fixedFromCharCode(parseInt(UnicodeInput.value, 16));
+  Result = fixedFromCharCode(parseInt(UnicodeInput.value, 16));
   LivePreview.innerHTML = Result;
 }
 

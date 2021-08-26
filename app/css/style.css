@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5, h6, .desc-title, #logo-container1{
   font-family: 'Noto Serif', serif;
 }
 
+.container{
+  width: 95%;
+}
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -38,12 +42,12 @@ h1, h2, h3, h4, h5, h6, .desc-title, #logo-container1{
 }
 
 table a {
-  font-size: 18px;
+  font-size: 24px;
   cursor: pointer;
   background: #666;
   color: #fff;
-  border-radius: 5px;
-  padding: 3px 8px 3px 8px;
+  border-radius: 15px;
+  padding: 3px 10px 3px 10px;
 }
 table a:hover {
   background: #aeaeae;

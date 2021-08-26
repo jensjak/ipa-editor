@@ -61,6 +61,10 @@ const createMainWindow = () => {
   mainWindow.on('unmaximize', () => {
     mainWindow.webContents.send('isRestored');
   });
+
+  ipcMain.on('openSettings', () => {
+    console.log('settings');
+  });
 };
 
 app.on('ready', () => {
