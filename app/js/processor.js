@@ -228,25 +228,11 @@ function limit(element) {
   }
 }
 
-// JS will only naturally handle characters up to 0xFFFF, this fixes it
-function fixedFromCharCode(codePt) {
-  if (codePt > 0xffff) {
-    // eslint-disable-next-line no-param-reassign
-    codePt -= 0x10000;
-    return String.fromCharCode(
-      0xd800 + (codePt >> 10),
-      0xdc00 + (codePt & 0x3ff)
-    );
-  }
-
-  return String.fromCharCode(codePt);
-}
-
 let Result;
 function UpdateLivePreview() {
   const UnicodeInput = document.getElementById('unicodeInput');
   const LivePreview = document.getElementById('LivePreview');
-  Result = fixedFromCharCode(parseInt(UnicodeInput.value, 16));
+  Result = String.fromCodePoint(parseInt(UnicodeInput.value, 16));
   LivePreview.innerHTML = Result;
 }
 

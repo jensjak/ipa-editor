@@ -1,14 +1,24 @@
 /* style.css */
 
-@media only screen and (max-width: 1199px) {
+@media only screen and (min-width: 992px and max-width: 1199px) {
   #consonantsTable tr td:first-child{
     display: none !important;
+}
+.container{
+  width: 95%;
 }
 }
 
 @media only screen and (max-width: 991px) {
+  .container{
+    width: 100%;
+    font-size: 3vw;
+  }
   #consonantsTable{
     display: flex;
+  }
+  #consonantsTable td:empty{
+    display: none;
   }
   #consonantsTable .grey{
     display: none;
@@ -28,8 +38,14 @@
     align-items: center;
     font-size: 3vw;
   }
-  .hideLowRes, #consonantsTable tr td:first-child{
+  .hideLowRes{
     display: none !important;
+}
+#consonantsTable tr td:first-child{
+  width: fit-content;
+  font-size: 2vw;
+  text-transform:uppercase;
+  color: #4A5954;
 }
 }
 
@@ -64,10 +80,6 @@ a:hover{
 
 a.btn:hover{
   color: #0A100D;
-}
-
-.container{
-  width: 95%;
 }
 
 .material-icons {
@@ -280,13 +292,13 @@ table a.hvg2:hover{
   background-color: rgba(0, 0, 0, .50);  
   backdrop-filter: blur(25px);
   position: fixed;
-  right: 25px;
-  top: 35px;
+  right: 0px;
+  bottom: 0px;
   width: 300px;
   height: 50px;
   user-select: none;
   z-index: 90;
-  border-radius: 15px;
+  border-top-left-radius: 15px;
   opacity: 0;
 }
 
@@ -314,7 +326,7 @@ table a.hvg2:hover{
 
 #app-content{
   position: relative;
-  margin-top: 30px;
+  margin-top: 35px; /*  30px + 5px */
   margin-bottom: 300px;
   flex-grow: 1;
   overflow-x: auto;

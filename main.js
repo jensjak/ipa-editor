@@ -15,9 +15,9 @@ let mainWindow;
 const createMainWindow = () => {
   mainWindow = new BrowserWindow({
     title: 'IPA Editor',
-    width: isDev ? 640 : 1500,
-    minWidth: isDev ? 640 : 1500,
-    height: isDev ? 1000 : 900,
+    width: isDev ? 550 : 1500,
+    minWidth: isDev ? 550 : 1500,
+    height: isDev ? 750 : 900,
     frame: false, // application frame and app icon will be hidden
     autoHideMenuBar: true, // hides menu bar on top and will disable finder on
     icon: `${__dirname}/assets/icons/icon.png`,
