@@ -1,4 +1,38 @@
 /* style.css */
+
+@media only screen and (max-width: 1199px) {
+  #consonantsTable tr td:first-child{
+    display: none !important;
+}
+}
+
+@media only screen and (max-width: 991px) {
+  #consonantsTable{
+    display: flex;
+  }
+  #consonantsTable .grey{
+    display: none;
+  }
+  #consonantsTable tr {
+    display: inline-flex;
+    flex-wrap: wrap;
+  }
+  #consonantsTable tr:nth-child(2n){
+    background: #D6EAC2;
+  }
+  #consonantsTable td {
+    display: inline-flex;
+    height: 5vw;
+    width: 5vw;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vw;
+  }
+  .hideLowRes, #consonantsTable tr td:first-child{
+    display: none !important;
+}
+}
+
 * {
   box-sizing: border-box;
   padding: 0px;
@@ -17,8 +51,19 @@ body {
   overflow: hidden;
 }
 
-h1, h2, h3, h4, h5, h6, .desc-title, #logo-container1{
+h1, h2, h3, h4, h5, h6, .desc-title, #logo-container{
   font-family: 'Noto Serif', serif;
+}
+
+a{
+  color: #99CB67;
+}
+a:hover{
+  color: #A3D076
+}
+
+a.btn:hover{
+  color: #0A100D;
 }
 
 .container{
@@ -41,36 +86,39 @@ h1, h2, h3, h4, h5, h6, .desc-title, #logo-container1{
   text-rendering: optimizeLegibility;
 }
 
-table a {
-  font-size: 24px;
-  cursor: pointer;
-  background: #666;
-  color: #fff;
-  border-radius: 15px;
-  padding: 3px 10px 3px 10px;
+table{
+  user-select: none;
 }
+
+table a{
+  color: #0A100D;
+  background:#FFF;
+  cursor: pointer;
+  padding-left:1vw;
+  padding-right:1vw;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+}
+
 table a:hover {
-  background: #aeaeae;
-  color: #000;
+  background: #E0EFD1;
+  color: #38433F;
 }
 
 table a.hvg1{
-  background: #008000;
+  background: #99CB67;
 }
 table a.hvg1:hover{
-  background: #80ff00;
+  background: #ADD585;
 }
 table a.hvg2{
-  background: #FF0000;
+  background: #F13030;
   opacity: 0.1;
 }
 table a.hvg2:hover{
-  background: #FF5500;
+  background: #F46666;
 }
 
-table#consonantsTable td{
-  border-right: 1px solid #ccc;
-}
 
 #title-bar{
   background: #333;
@@ -220,6 +268,43 @@ table#consonantsTable td{
 #title-bar-rightmenu > li#closeBtn:hover{
   background: #b63131;
 }
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fade-out {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+#status-bar{
+  background-color: rgba(0, 0, 0, .50);  
+  backdrop-filter: blur(25px);
+  position: fixed;
+  right: 25px;
+  top: 35px;
+  width: 300px;
+  height: 50px;
+  user-select: none;
+  z-index: 90;
+  border-radius: 15px;
+  opacity: 0;
+}
+
+#status-bar ul{
+  width: 100%;
+  height:100%;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#status-bar ul li{
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FFF;
+  font-weight: 600;
+}
 
 .shortCutText{
   position: absolute;
@@ -260,7 +345,7 @@ p.desc, .modal p{
 }
 
 .enlarge{
-  font-size: 32px;
+  font-size: 26px;
 }
 
 #unicodeInput{
@@ -268,15 +353,13 @@ p.desc, .modal p{
 }
 
 #inputArea{
-  background: #444;
+  
   color: #AEAEAE;
   position: fixed;
   z-index: 50;
   width: 100%;
   height: 200px;
   bottom: 0px;
-  /* background-color: rgba(255, 255, 255, .15);  
-  backdrop-filter: blur(15px); */
   overflow-x: hidden;
   overflow-y: hidden;
   padding: 10px;
@@ -285,7 +368,6 @@ p.desc, .modal p{
 #inputArea textarea{
   width: 100%;
   height: 150px;
-  color: #AEAEAE;
   padding: 5px;
   line-height: 1.5;
   font-size: 32px;
@@ -312,7 +394,23 @@ p.desc, .modal p{
   width: 100%;
   display: inline-flex;
   justify-content: flex-end;
+  margin-top: 5px;
 }
+
+.material-tooltip { 
+  background-color: rgba(0, 0, 0, .50);  
+  backdrop-filter: blur(25px);
+  color: #99CB67
+}
+
+.modal, .modal-footer {
+  background-color: rgba(255, 255, 255, .15) !important; 
+  backdrop-filter: blur(25px);
+}
+
+/* 
+    SCROLLBAR & SELECTION
+*/
 
   *::-webkit-scrollbar {
     width: 15px;
@@ -325,3 +423,67 @@ p.desc, .modal p{
     border-radius: 15px;
     border: 3px solid #ffffff;
   }
+
+  ::selection {
+    color: #99CB67;
+    background: #0A100D;
+  }
+
+  /* 
+      CUSTOM COLORS
+  */
+
+  .tea-green{ background-color: #C0DFA1 !important; }
+  .tea-green-text{ color: #C0DFA1 !important; }
+  .tea-green.lighten-1{ background-color: #CCE5B3 !important; }
+  .tea-green.lighten-2{ background-color: #D6EAC2 !important; }
+  .tea-green.lighten-3{ background-color: #E0EFD1 !important; }
+  .tea-green.lighten-4{ background-color: #EBF5E1 !important; }
+  .tea-green.darken-1{ background-color: #B8DB95 !important; }
+  .tea-green.darken-2{ background-color: #ADD585 !important; }
+  .tea-green.darken-3{ background-color: #A3D076 !important; }
+  .tea-green.darken-4{ background-color: #99CB67 !important; }
+
+  .grey-green{ background: #5C6F68 !important; }
+  .grey-green-text{ color: #5C6F68 !important; }
+  .grey-green.lighten-1{ background-color: #667A73 !important; }
+  .grey-green.lighten-2{ background-color: #6F857D !important; }
+  .grey-green.lighten-3{ background-color: #7A9088 !important; }
+  .grey-green.lighten-4{ background-color: #859991 !important; }
+  .grey-green.darken-1{ background-color: #54645E !important; }
+  .grey-green.darken-2{ background-color: #4A5954 !important; }
+  .grey-green.darken-3{ background-color: #414E49 !important; }
+  .grey-green.darken-4{ background-color: #38433F !important; }
+
+  .rich-black{ background-color: #0A100D !important }
+  .rich-black-text { color: #0A100D }
+  .lavender-white{ background-color: #DDDBF1 !important}
+  .lavender-white-text{ color: #DDDBF1 !important}
+
+  
+.btn.disabled, .disabled.btn-large, .disabled.btn-small,
+.btn-floating.disabled,
+.btn-large.disabled,
+.btn-small.disabled,
+.btn-flat.disabled,
+.btn:disabled,
+.btn-large:disabled,
+.btn-small:disabled,
+.btn-floating:disabled,
+.btn-large:disabled,
+.btn-small:disabled,
+.btn-flat:disabled,
+.btn[disabled],
+.btn-large[disabled],
+.btn-small[disabled],
+.btn-floating[disabled],
+.btn-large[disabled],
+.btn-small[disabled],
+.btn-flat[disabled] {
+  pointer-events: none;
+  background-color: #EBF5E1 !important;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #9F9F9F !important;
+  cursor: default;
+}

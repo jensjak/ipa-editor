@@ -4,6 +4,7 @@
 const textInput = document.getElementById('textInput');
 const charCountText = document.getElementById('charCountText');
 const wordCountText = document.getElementById('wordCountText');
+const statusBar = document.getElementById('status-bar');
 const historyArea = document.getElementById('historyArea');
 const bracketsBtns = document.querySelectorAll('a.bBtn');
 
@@ -28,6 +29,7 @@ document.querySelector('#copyBtn').onclick = () => {
 
 let charCount;
 let wordCount;
+let fadeOut;
 const charMemory = [];
 
 // simple character and word counters
@@ -37,6 +39,16 @@ function updateCounters() {
   if (textInput.value.length < 1) {
     wordCountText.innerHTML = '0';
   }
+  // make the statusbar visible, which contains the counters
+  statusBar.style.opacity = '1';
+  statusBar.style.animation = 'fade-in 0.5s ease-in';
+  // clear timer to avoid flickering of statusBar while typing or entering more characters
+  clearTimeout(fadeOut);
+  // fade statusBar out after two seconds
+  fadeOut = setTimeout(() => {
+    statusBar.style.opacity = '0';
+    statusBar.style.animation = 'fade-out 0.5s ease-out';
+  }, 2000);
 }
 
 // update counters on typing in textarea
@@ -100,7 +112,7 @@ function add(char) {
   }
   // create the new list of buttons and update the HTML
   charMemory.forEach((c) => {
-    temp += `<a class="waves-effect waves-light btn"\
+    temp += `<a class="waves-effect waves-light btn tea-green rich-black-text"\
      onclick="add('${c}')">${c}</a> `;
     historyArea.innerHTML = temp;
   });

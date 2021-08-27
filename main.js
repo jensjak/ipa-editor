@@ -15,14 +15,14 @@ let mainWindow;
 const createMainWindow = () => {
   mainWindow = new BrowserWindow({
     title: 'IPA Editor',
-    width: isDev ? 1500 : 1500,
-    minWidth: 1500,
+    width: isDev ? 640 : 1500,
+    minWidth: isDev ? 640 : 1500,
     height: isDev ? 1000 : 900,
     frame: false, // application frame and app icon will be hidden
     autoHideMenuBar: true, // hides menu bar on top and will disable finder on
     icon: `${__dirname}/assets/icons/icon.png`,
     resizable: true,
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
@@ -61,11 +61,11 @@ const createMainWindow = () => {
   mainWindow.on('unmaximize', () => {
     mainWindow.webContents.send('isRestored');
   });
-
-  ipcMain.on('openSettings', () => {
-    console.log('settings');
-  });
 };
+
+ipcMain.on('openSettings', () => {
+  console.log('settings');
+});
 
 app.on('ready', () => {
   createMainWindow();
