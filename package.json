@@ -20,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^13.2.1",
+    "electron-packager": "^15.3.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.24.2",

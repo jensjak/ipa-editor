@@ -55,9 +55,6 @@
         <li id="fileMenu" onclick="toggleMenu('fileMenu')">
           <a href="#">File</a>
           <ul class="drop-menu">
-            <li><a href="https://upload.wikimedia.org/wikipedia/commons/a/a8/IPA_chart_2020.pdf" target="_blank">Open
-                IPA Chart in Browser</a></li>
-            <li id="fileMenuSettings">Settings</li>
             <li id="fileMenuExit">Exit <span class="shortCutText">Ctrl+P</span></li>
           </ul>
         </li>
@@ -101,7 +98,7 @@
 
       <div class="container">
         <div class="row">
-          <div class="col l6 s12">
+          <div class="col s12">
             <table id="consonantsTable" class="table hvgTable">
               <tr class="hideLowRes">
                 <td rowspan="2">Place, Manner</td>
@@ -453,15 +450,19 @@
                 <td colspan="4" class="grey"></td>
               </tr>
             </table>
-            <p class="desc hideLowRes"><span class="desc-title">Pulmonic consonants.</span> Symbols to the right are
-              <em>voiced</em>, to the left are <em>voiceless</em>. Dark grey areas denote articulations judged
-              impossible.
+            <p class="desc"><span class="desc-title"><span class="material-icons">
+                  expand_less
+                </span>Pulmonic consonants.</span> <span class="hideLowRes">Symbols to
+                the
+                right are
+                <em>voiced</em>, to the left are <em>voiceless</em>. Dark grey areas denote articulations judged
+                impossible.</span>
             </p>
           </div>
         </div>
 
         <div class="row">
-          <div class="col s12 h6">
+          <div class="col s12 l8 h8">
             <table id="vowelTable" class="table hvgTable">
               <tr>
                 <td></td>
@@ -558,8 +559,224 @@
                     onclick="add('ɒ')">ɒ</a></td>
               </tr>
             </table>
-            <p class="desc"><span class="desc-title">Vowels.</span> Vowels beside dots are: <em>unrounded</em>
-              &bull; <em>rounded</em></p>
+            <p class="desc">
+              <span class="material-icons">
+                expand_less
+              </span>
+              <span class="desc-title">Vowels.</span> Vowels beside dots are: <em>unrounded</em>
+              &bull; <em>rounded</em>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12">
+            <table id="diacritisTable">
+              <tbody>
+                <tr>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0325')">◌̥</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u030A')">◌̊</a>
+                  </th>
+                  <td> Voiceless
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u0324')">◌̤</a>
+                  </th>
+                  <td>Breathy voiced
+                  </td>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u032A')">◌̪</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0346')">◌͆</a>
+                  </th>
+                  <td> Dental
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u032C')">◌̬</a>
+                  </th>
+                  <td>Voiced
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u0330')">◌̰</a>
+                  </th>
+                  <td>Creaky voiced
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u033A')">◌̺</a>
+                  </th>
+                  <td>Apical
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u02B0')">◌ʰ</a>
+                  </th>
+                  <td>Aspirated
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u033C')">◌̼</a>
+                  </th>
+                  <td>Linguolabial
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u033B')">◌̻</a>
+                  </th>
+                  <td>Laminal
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2"><a class="enlarge" onclick="add('\u0339')">◌̹</a>
+                  </th>
+                  <th colspan="2"><a class="enlarge" onclick="add('\u0357')">◌͗</a>
+                  </th>
+                  <th colspan="2"><a class="enlarge" onclick="add('\u0317')">◌̗</a>
+                  </th>
+                  <td>More rounded
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u02B7')">◌ʷ</a>
+                  </th>
+                  <td>Labialized
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u0303')">◌̃</a>
+                  </th>
+                  <td>Nasalized
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="2"><a class="enlarge" onclick="add('\u031C')">◌̜</a>
+                  </th>
+                  <th colspan="2"><a class="enlarge" onclick="add('\u0351')">◌͑</a>
+                  </th>
+                  <th colspan="2"><a class="enlarge" onclick="add('\u0317')">◌˓</a>
+                  </th>
+                  <td>Less rounded
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u02B2')">◌ʲ</a>
+                  </th>
+                  <td>Palatalized
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u207F')">◌ⁿ</a>
+                  </th>
+                  <td>Nasal release
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u031F')">◌̟</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0303')">◌˖</a>
+                  </th>
+                  <td>Advanced
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u02E0')">◌ˠ</a>
+                  </th>
+                  <td>Velarized
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u02E1')">◌ˡ</a>
+                  </th>
+                  <td> Lateral release
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0320')">◌̠</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0317')">◌˗</a>
+                  </th>
+                  <td>Retracted
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u02E4')">◌ˤ</a>
+                  </th>
+                  <td>Pharyngealized
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u031A')">◌̚</a>
+                  </th>
+                  <td>No audible release
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u0308')">◌̈</a>
+                  </th>
+                  <td>Centralized
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u0334')">◌̴</a>
+                  </th>
+                  <td> Velarized or pharyngealized
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u1D4A')">◌ᵊ</a>
+                  </th>
+                  <td>Mid central vowel release
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u033D')">◌̽</a>
+                  </th>
+                  <td>Mid-centralized
+                  </td>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u031D')">◌̝</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u02D4')">◌˔</a>
+                  </th>
+                  <td>Raised
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u1DBF')">◌ᶿ</a>
+                  </th>
+                  <td> Voiceless dental fricative release
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0329')">◌̩</a></th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u030D')">◌̍</a></th>
+                  <td>Syllabic
+                  </td>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u031E')">◌̞</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u02D5')">◌˕</a>
+                  </th>
+                  <td>Lowered
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u02E3')">◌ˣ</a>
+                  </th>
+                  <td> Voiceless velar fricative release
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u032F')">◌̯</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0311')">◌̑</a>
+                  </th>
+                  <td>Non-syllabic
+                  </td>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0318')">◌̘</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\uAB6A')">◌꭪</a>
+                  </th>
+                  <td> Advanced tongue root
+                  </td>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u02BC')">◌ʼ</a>
+                  </th>
+                  <td>Ejective
+                  </td>
+                </tr>
+                <tr>
+                  <th colspan="6"><a class="enlarge" onclick="add('\u0027')">◌˞</a>
+                  </th>
+                  <td>Rhoticity
+                  </td>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0319')">◌̙</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\uAB6B')">◌꭫</a>
+                  </th>
+                  <td>Retracted tongue root
+                  </td>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u0361')">◌͡◌</a>
+                  </th>
+                  <th colspan="3"><a class="enlarge" onclick="add('\u035C')">◌͜◌</a>
+                  </th>
+                  <td>Affricate or double articulation</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p class="desc">
+              <span class="material-icons">
+                expand_less
+              </span>
+              <span class="desc-title">Diacritics.</span> They combine with the last typed character.
+            </p>
           </div>
         </div>
 
@@ -586,7 +803,12 @@
                     <td><a class="enlarge tooltipped" data-tooltip="Global fall" onclick="add('↘︎');">↘︎</a></td>
                   </tr>
                 </table>
-                <p class="desc"><span class="desc-title">Suprasegmentals.</span></p>
+                <p class="desc">
+                  <span class="material-icons">
+                    expand_less
+                  </span>
+                  <span class="desc-title">Suprasegmentals.</span>
+                </p>
 
                 <table>
                   <tbody>
@@ -652,7 +874,12 @@
                     </tr>
                   </tbody>
                 </table>
-                <p class="desc"><span class="desc-title">Tone contours.</span></p>
+                <p class="desc">
+                  <span class="material-icons">
+                    expand_less
+                  </span>
+                  <span class="desc-title">Tone contours.</span>
+                </p>
                 <table>
                   <tbody>
                     <tr>
@@ -695,211 +922,11 @@
                     </tr>
                   </tbody>
                 </table>
-                <p class="desc"><span class="desc-title">Tone registers.</span></p>
-              </div>
-              <div class="col s6">
-
-                <table>
-                  <tbody>
-                    <tr>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0325')">◌̥</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u030A')">◌̊</a>
-                      </th>
-                      <td> Voiceless
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u0324')">◌̤</a>
-                      </th>
-                      <td>Breathy voiced
-                      </td>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u032A')">◌̪</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0346')">◌͆</a>
-                      </th>
-                      <td> Dental
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u032C')">◌̬</a>
-                      </th>
-                      <td>Voiced
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u0330')">◌̰</a>
-                      </th>
-                      <td>Creaky voiced
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u033A')">◌̺</a>
-                      </th>
-                      <td>Apical
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u02B0')">◌ʰ</a>
-                      </th>
-                      <td>Aspirated
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u033C')">◌̼</a>
-                      </th>
-                      <td>Linguolabial
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u033B')">◌̻</a>
-                      </th>
-                      <td>Laminal
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="2"><a class="enlarge" onclick="add('\u0339')">◌̹</a>
-                      </th>
-                      <th colspan="2"><a class="enlarge" onclick="add('\u0357')">◌͗</a>
-                      </th>
-                      <th colspan="2"><a class="enlarge" onclick="add('\u0317')">◌̗</a>
-                      </th>
-                      <td>More rounded
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u02B7')">◌ʷ</a>
-                      </th>
-                      <td>Labialized
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u0303')">◌̃</a>
-                      </th>
-                      <td>Nasalized
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="2"><a class="enlarge" onclick="add('\u031C')">◌̜</a>
-                      </th>
-                      <th colspan="2"><a class="enlarge" onclick="add('\u0351')">◌͑</a>
-                      </th>
-                      <th colspan="2"><a class="enlarge" onclick="add('\u0317')">◌˓</a>
-                      </th>
-                      <td>Less rounded
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u02B2')">◌ʲ</a>
-                      </th>
-                      <td>Palatalized
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u207F')">◌ⁿ</a>
-                      </th>
-                      <td>Nasal release
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u031F')">◌̟</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0303')">◌˖</a>
-                      </th>
-                      <td>Advanced
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u02E0')">◌ˠ</a>
-                      </th>
-                      <td>Velarized
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u02E1')">◌ˡ</a>
-                      </th>
-                      <td> Lateral release
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0320')">◌̠</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0317')">◌˗</a>
-                      </th>
-                      <td>Retracted
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u02E4')">◌ˤ</a>
-                      </th>
-                      <td>Pharyngealized
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u031A')">◌̚</a>
-                      </th>
-                      <td>No audible release
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u0308')">◌̈</a>
-                      </th>
-                      <td>Centralized
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u0334')">◌̴</a>
-                      </th>
-                      <td> Velarized or pharyngealized
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u1D4A')">◌ᵊ</a>
-                      </th>
-                      <td>Mid central vowel release
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u033D')">◌̽</a>
-                      </th>
-                      <td>Mid-centralized
-                      </td>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u031D')">◌̝</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u02D4')">◌˔</a>
-                      </th>
-                      <td>Raised
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u1DBF')">◌ᶿ</a>
-                      </th>
-                      <td> Voiceless dental fricative release
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0329')">◌̩</a></th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u030D')">◌̍</a></th>
-                      <td>Syllabic
-                      </td>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u031E')">◌̞</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u02D5')">◌˕</a>
-                      </th>
-                      <td>Lowered
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u02E3')">◌ˣ</a>
-                      </th>
-                      <td> Voiceless velar fricative release
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u032F')">◌̯</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0311')">◌̑</a>
-                      </th>
-                      <td>Non-syllabic
-                      </td>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0318')">◌̘</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\uAB6A')">◌꭪</a>
-                      </th>
-                      <td> Advanced tongue root
-                      </td>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u02BC')">◌ʼ</a>
-                      </th>
-                      <td>Ejective
-                      </td>
-                    </tr>
-                    <tr>
-                      <th colspan="6"><a class="enlarge" onclick="add('\u0027')">◌˞</a>
-                      </th>
-                      <td>Rhoticity
-                      </td>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0319')">◌̙</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\uAB6B')">◌꭫</a>
-                      </th>
-                      <td>Retracted tongue root
-                      </td>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u0361')">◌͡◌</a>
-                      </th>
-                      <th colspan="3"><a class="enlarge" onclick="add('\u035C')">◌͜◌</a>
-                      </th>
-                      <td>Affricate or double articulation</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <p class="desc"><span class="desc-title">Diacritics.</span> They combine with the last typed character.
+                <p class="desc">
+                  <span class="material-icons">
+                    expand_less
+                  </span>
+                  <span class="desc-title">Tone registers.</span>
                 </p>
               </div>
             </div>
@@ -910,35 +937,30 @@
           <div class="col s12">
             <div class="row">
               <div class="col s12 m6">
-                <ul class="collection">
-                  <li class="collection-item  tea-green lighten-3">
-                    <a class="enlarge waves-effect waves-light btn tooltipped" data-tooltip="Tone 1"
+                <ul class="collection tea-green lighten-4">
+                  <li class="collection-item tea-green lighten-3">
+                    <a class="enlarge btn waves-effect waves-light tooltipped" data-tooltip="Tone 1"
                       onclick="add('\u0304')">◌̄</a>
-                    <a class="enlarge waves-effect waves-light btn tooltipped" data-tooltip="Tone 2"
+                    <a class="enlarge btn waves-effect waves-light tooltipped" data-tooltip="Tone 2"
                       onclick="add('\u0301')">◌́</a>
-                    <a class="enlarge waves-effect waves-light btn tooltipped" data-tooltip="Tone 3"
+                    <a class="enlarge btn waves-effect waves-light tooltipped" data-tooltip="Tone 3"
                       onclick="add('\u030C')">◌̌</a>
-                    <a class="enlarge waves-effect waves-light btn tooltipped" data-tooltip="Tone 4"
+                    <a class="enlarge btn waves-effect waves-light tooltipped" data-tooltip="Tone 4"
                       onclick="add('\u0340')">◌̀</a>
-                    <div class="right">
-                      <a class="enlarge waves-effect waves-light btn tooltipped blue" data-tooltip="Tone 1 (auto mode)"
-                        onclick="autoPinyin('\u0304')">◌̄</a>
-                      <a class="enlarge waves-effect waves-light btn tooltipped blue" data-tooltip="Tone 2 (auto mode)"
-                        onclick="autoPinyin('\u0301')">◌́</a>
-                      <a class="enlarge waves-effect waves-light btn tooltipped blue" data-tooltip="Tone 3 (auto mode)"
-                        onclick="autoPinyin('\u030C')">◌̌</a>
-                      <a class="enlarge waves-effect waves-light btn tooltipped blue" data-tooltip="Tone 4 (auto mode)"
-                        onclick="autoPinyin('\u0340')">◌̀</a>
-                    </div>
                   </li>
                 </ul>
-                <p class="desc"><span class="desc-title">PinYin (拼音) tone marks.</span> These are not part of the IPA
-                  chart but useful for transcribing chinese characters.</p>
+                <p class="desc">
+                  <span class="material-icons">
+                    expand_less
+                  </span>
+                  <span class="desc-title">PinYin (拼音) tone marks.</span> These are not part of the IPA
+                  chart but useful for transcribing chinese characters.
+                </p>
               </div>
 
               <div class="row">
-                <ul class="collection col s12 m6">
-                  <li class="collection-item">
+                <ul class="collection col s12 m6 tea-green lighten-4">
+                  <li class="collection-item tea-green lighten-3">
                     <div class="input-field">
                       <select id="langSelection">
                         <option value="0" selected>All</option>
@@ -948,7 +970,7 @@
                       <label>Target Language</label>
                     </div>
                   </li>
-                  <li class="collection-item">
+                  <li class="collection-item tea-green lighten-3">
 
                     <input type="text" id="unicodeInput" onchange="UpdateLivePreview()" onkeydown="limit(this);"
                       onkeyup="limit(this);"> <a class="waves-effect waves-light btn-small" id="LivePreview"
@@ -989,6 +1011,7 @@
         </div>
       </div>
 
+      <!-- 
       <footer class="page-footer tea-green darken-3">
         <div class="container">
           <div class="row">
@@ -1010,7 +1033,7 @@
               Jakob</a> | <a class="modal-trigger grey-green-text" href="#modal1">Credits</a>
           </div>
         </div>
-      </footer>
+      </footer> -->
       <!-- App Content end -->
     </div>
     <!-- wrapper end -->

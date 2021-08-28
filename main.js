@@ -5,7 +5,7 @@ const {
 const path = require('path');
 
 // Set env
-process.env.NODE_ENV = 'development';
+process.env.NODE_ENV = 'production';
 
 const isDev = process.env.NODE_ENV !== 'production';
 const isMac = process.platform === 'darwin';
@@ -15,8 +15,8 @@ let mainWindow;
 const createMainWindow = () => {
   mainWindow = new BrowserWindow({
     title: 'IPA Editor',
-    width: isDev ? 550 : 1500,
-    minWidth: isDev ? 550 : 1500,
+    width: isDev ? 550 : 900,
+    minWidth: 550,
     height: isDev ? 750 : 900,
     frame: false, // application frame and app icon will be hidden
     autoHideMenuBar: true, // hides menu bar on top and will disable finder on

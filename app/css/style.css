@@ -1,20 +1,31 @@
 /* style.css */
-
-@media only screen and (min-width: 992px and max-width: 1199px) {
-  #consonantsTable tr td:first-child{
-    display: none !important;
-}
-.container{
-  width: 95%;
-}
+@media only screen and (min-width: 1300px){
+  .container{
+    width: 95%;
+    max-width: 2000px;
+  }
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (min-width: 1100px) and (max-width: 1299px) {
+    #consonantsTable tr td:first-child{
+      display: none !important;
+  }
+  .container{
+    width: 100% !important;
+    max-width: 1035px;
+  }
+}
+
+@media only screen and (max-width: 1099px) {
   .container{
     width: 100%;
     font-size: 3vw;
+    max-width: 100%;
   }
-  #consonantsTable{
+  #diacritisTable{
+    font-size: 2.2vw;
+  }
+  #consonantsTable, #diacritisTable{
     display: flex;
   }
   #consonantsTable td:empty{
@@ -23,14 +34,14 @@
   #consonantsTable .grey{
     display: none;
   }
-  #consonantsTable tr {
+  #consonantsTable tr, #diacritisTable tr {
     display: inline-flex;
     flex-wrap: wrap;
   }
   #consonantsTable tr:nth-child(2n){
     background: #D6EAC2;
   }
-  #consonantsTable td {
+  #consonantsTable td, #diacritsTable tr {
     display: inline-flex;
     height: 5vw;
     width: 5vw;
@@ -329,7 +340,8 @@ table a.hvg2:hover{
   margin-top: 35px; /*  30px + 5px */
   margin-bottom: 300px;
   flex-grow: 1;
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .drag{
