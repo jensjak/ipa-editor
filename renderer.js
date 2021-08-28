@@ -1,10 +1,14 @@
 /* eslint-disable no-undef */
 // renderer.js
 // eslint-disable-next-line import/no-extraneous-dependencies
-const { ipcRenderer, shell } = require('electron');
+const { ipcRenderer, shell, webFrame } = require('electron');
 
 const maxResBtn = document.getElementById('maxResBtn');
 const maxResBtnSpan = document.querySelector('#maxResBtn > span');
+
+// disable zoom, does not seem to work on ctrl + -
+webFrame.setVisualZoomLevelLimits(1, 1);
+webFrame.setLayoutZoomLevelLimits(0, 0);
 
 // Open all links in external browser
 document.addEventListener('click', (event) => {
